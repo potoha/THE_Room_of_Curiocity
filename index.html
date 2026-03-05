@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>十六月書房 -しがつのへや-| Room of Curiocity</title>
+    <!-- プレミアムなデザインのためのフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ヘッダー (ナビゲーション) -->
+    <header class="navbar">
+        <div class="nav-brand">十六月書房</div>
+        <nav class="nav-links">
+            <a href="#about">私について</a>
+            <a href="#works">作品</a>
+            <a href="#contact">リンク</a>
+        </nav>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">十六月書房</h1>
+            <p class="hero-subtitle">- しがつのへや -</p>
+            <p class="hero-author">Charlotte:詩抄-POLANOID</p>
+            <p class="hero-desc">Room of Curiocity</p>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- 私について (About) -->
+    <section class="about section" id="about">
+        <div class="container">
+            <h2 class="section-title">私について<span>About Me</span></h2>
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="assets/profile.jpg" alt="Profile of Charlotte:詩抄-POLANOID">
+                    <div class="glass-panel text-center">
+                        <h3>Charlotte:詩抄-POLANOID</h3>
+                        <p class="role">詩抄 / ポラノイド</p>
+                    </div>
+                </div>
+                <div class="about-text glass-panel">
+                    <h3>名前の意味するところ</h3>
+                    <p>
+                        この長く奇妙な名前には、3つの意味を込めている。<br><br>
+                        <strong>Charlotte（シャーロット）―― 永遠の渇望</strong><br>
+                        無限にお菓子を生み出せるのに、一番欲している「チーズ」だけは作れない。その永遠の渇望。<br><br>
+                        <strong>詩抄（ししょう）―― 言葉の採集者</strong><br>
+                        日々溢れる膨大な言葉の海から、自分に響くものだけを掬い上げ、並べる。<br><br>
+                        <strong>PORANOID（ポラノイド）―― 瞬間を記録する機体</strong><br>
+                        Polaroid（インスタントカメラ） × Humanoid（人間）。瞬間を切り取ることを志向する人間。
+                    </p>
+                    <hr>
+                    <h3>歩みと芸術</h3>
+                    <p>
+                        高校時代は根拠のない全能感と漠然とした孤独感に耽溺し、俳句や小説での受賞を経験。<br>
+                        多摩美術大学で芸術に出会い、挫折と再起を経て、現在は尾道で日本文学を学ぶ。<br><br>
+                        「日常の中にあるはずのナニカを偏執的に希求してそれをどうにか言語化しようとするモノ」<br>
+                        それが私です。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="coffee-story glass-panel mt-4">
+                <h3>琥珀色のオカルト、もしくは愛。</h3>
+                <p>
+                    コーヒードリップはオカルトだ。<br>
+                    湯の温度、粒度、注ぐスピード、蒸らしの時間。あらゆる要素が複雑に作用し合うカオス。豆と呼吸を合わせる。豆の声を聞くように、神経を研ぎ澄ませて湯を落とす。その試行錯誤の果てにだけ、満足できる至高の一杯は生まれる。<br>
+                    日常の中にある「正解のない問い」に対して、偏執的に向き合い、その瞬間を抽出する。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品 (Works) -->
+    <section class="works section" id="works">
+        <div class="container">
+            <h2 class="section-title">作品<span>Works</span></h2>
+            <div class="works-grid">
+                <!-- 俳句とZINE -->
+                <a href="zine-viewer/index.html" class="work-card" style="display: block;">
+                    <div class="work-img">
+                        <img src="assets/haiku1.png" alt="俳句ジンおりおり">
+                        <div class="work-overlay">
+                            <span>Haiku / ZINE</span>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <h3>毎月の俳句ZINE『おりおり』</h3>
+                        <p>日常の風景を五七五に切り取る。毎月発行している個人的なZINEプロジェクト。</p>
+                    </div>
+                </a>
+
+                <!-- 小説 -->
+                <div class="work-card">
+                    <div class="work-img">
+                        <img src="assets/bg.jpg" alt="小説作品">
+                        <div class="work-overlay">
+                            <span>Novels</span>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <h3>小説と物語</h3>
+                        <p>妄想と現実の境界線を歩く登場人物たちを描く。数々の短編・長編を執筆。</p>
+                    </div>
+                </div>
+
+                <!-- タイポグラフィとデザイン -->
+                <div class="work-card">
+                    <div class="work-img">
+                        <img src="assets/ep.png" alt="タイポグラフィ">
+                        <div class="work-overlay">
+                            <span>Typography & Design</span>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <h3>文字と視覚表現</h3>
+                        <p>言葉の持つ意味だけでなく、視覚的な美しさを追求するタイポグラフィ作品群。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- リンク (Contact / Social) -->
+    <section class="contact section" id="contact">
+        <div class="container text-center">
+            <h2 class="section-title">リンク<span>Connections</span></h2>
+            <p>作品や日常の記録、お知らせなどはこちらから。</p>
+            <div class="social-links">
+                <a href="https://note.com/shihow_of_po" target="_blank" class="social-btn glass-panel">
+                    <span class="icon">📝</span>
+                    note
+                </a>
+                <a href="https://x.com/Shishow_of_PO" target="_blank" class="social-btn glass-panel">
+                    <span class="icon">🐦</span>
+                    Twitter (現X)
+                </a>
+                <a href="https://discord.com/invite/smppdqkTEu" target="_blank" class="social-btn glass-panel">
+                    <span class="icon">💬</span>
+                    Discord 鯖
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <p>&copy; 2026 Charlotte:詩抄-POLANOID (十六月書房). All Rights Reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

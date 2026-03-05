@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZINE Viewer — おりおり | 十六月書房</title>
+    <meta name="description" content="俳句とタイポグラフィのマイクロZINE『おりおり』全12号を3Dで体験する">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;700&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- GSAP (global script, not module) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- Three.js via ES Module importmap -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- ===== Loading Screen ===== -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-inner">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">読み込み中…</p>
+        </div>
+    </div>
+
+    <!-- ===== Header ===== -->
+    <header id="header">
+        <div class="header-spacer"></div>
+        <a href="../index.html" class="header-title-link">
+            <h1 class="header-title">俳句ZINE『おりおり』</h1>
+        </a>
+        <div class="header-spacer"></div>
+    </header>
+
+    <!-- ===== Gallery View ===== -->
+    <main id="gallery-view">
+        <section class="gallery-intro">
+            <p>A4用紙1枚から生まれる、8ページの小さな本。<br>表紙を選んで、折りたたみの過程を体験してください。</p>
+        </section>
+        <div id="gallery-grid" class="gallery-grid">
+            <!-- JS で生成 -->
+        </div>
+    </main>
+
+    <!-- ===== 3D Canvas (常時背面に存在) ===== -->
+    <div id="canvas-wrap"></div>
+
+    <!-- ===== Viewer Overlay Controls ===== -->
+    <div id="viewer-ui" class="viewer-ui hidden">
+        
+        <!-- 折りたたみ開始ボタン -->
+        <div id="fold-prompt" class="fold-prompt hidden">
+            <p>A4展開図を表示しています</p>
+            <button id="btn-fold" class="btn-primary">折りたたむ</button>
+        </div>
+
+        <!-- ページめくりUI -->
+        <div id="page-ui" class="page-ui hidden">
+            <div class="page-nav">
+                <button id="btn-prev" class="btn-page" disabled>◀</button>
+                <span id="page-label" class="page-label">表紙</span>
+                <button id="btn-next" class="btn-page">▶</button>
+            </div>
+            <div class="page-actions">
+                <button id="btn-gallery" class="btn-secondary">一覧に戻る</button>
+                <a id="btn-pdf" href="#" class="btn-primary btn-download hidden" download>
+                    このZINEを印刷して折ってみる（PDF）
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Footer Navigation ===== -->
+    <footer id="page-footer" class="page-footer">
+        <a href="../index.html" class="footer-btn">
+            <span class="hamburger-icon">☰</span> トップへ
+        </a>
+        <a href="../index.html" class="footer-btn btn-back-home" id="btn-back">
+            <span class="arrow">←</span> もどる
+        </a>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
