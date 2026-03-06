@@ -25,6 +25,8 @@ const state = {
     phase: 'flat',    // flat | folding | book
     zine: null,
     spread: 0,
+    page: 0,
+    viewMode: 'spread',
 };
 
 // ─── DOM refs ──────────────────────────────
@@ -511,9 +513,7 @@ function buildBookView(textures) {
     bookGroup.rotation.set(-0.12, 0.08, 0);
 
     // カメラセット
-    gsap.to(camera.position, { x: 0, y: 0.5, z: 4.5, duration: 1.2, ease: 'power2.out' });
-    gsap.to(controls.target, { x: 0, y: 0, z: 0, duration: 1.2, ease: 'power2.out',
-        onUpdate: () => controls.update() });
+    // ここではなく startFolding 側で最終調整する
 }
 
 function applySpreadTextures(spreadIdx) {
@@ -545,8 +545,9 @@ function applySpreadTextures(spreadIdx) {
 //  → 右ページを spine 位置をピボットに Y軸 -180° 回転
 // ============================================================
 function flipPage(newSpread, direction) {
-    if (isFlipping || !bookGroup) return;
+    if (isFlipping || !bookGroup) return Promise.resolve();
     isFlipping = true;
+    return new Promise(resolve => {
 
     const pw = QTR_W * 1.6;
 
@@ -580,6 +581,7 @@ function flipPage(newSpread, direction) {
                 state.spread = newSpread;
                 applySpreadTextures(newSpread);
                 isFlipping = false;
+                resolve();
             },
         });
 
@@ -613,6 +615,7 @@ function flipPage(newSpread, direction) {
                 state.spread = newSpread;
                 applySpreadTextures(newSpread);
                 isFlipping = false;
+                resolve();
             },
         });
 
@@ -622,6 +625,7 @@ function flipPage(newSpread, direction) {
             ease: 'power2.inOut',
         });
     }
+    });
 }
 
 
@@ -649,6 +653,7 @@ async function openZine(zine) {
     state.phase = 'flat';
     state.zine = zine;
     state.spread = 0;
+    state.page = 0;
 
     loadingScreen.classList.remove('fade-out');
     loadingScreen.style.display = 'flex';
@@ -688,13 +693,31 @@ async function startFolding() {
     buildBookView(textures);
 
     pageUI.classList.remove('hidden');
+    
+    // Set initial view mode based on screen size
+    updateViewMode();
+    state.page = 0;
+    updateCameraForViewMode(true);
     updateSpreadLabel();
 }
 
 function updateSpreadLabel() {
-    pageLabel.textContent = SPREAD_LABELS[state.spread];
-    btnPrev.disabled = state.spread === 0;
-    btnNext.disabled = state.spread === SPREAD_COUNT - 1;
+    if (state.viewMode === 'spread') {
+        pageLabel.textContent = SPREAD_LABELS[state.spread];
+        btnPrev.disabled = state.spread === 0;
+        btnNext.disabled = state.spread === SPREAD_COUNT - 1;
+    } else {
+        // Single mode labels
+        if (state.page === 0) {
+            pageLabel.textContent = '表紙';
+        } else if (state.page === 7) {
+            pageLabel.textContent = '裏表紙';
+        } else {
+            pageLabel.textContent = 'P.' + state.page;
+        }
+        btnPrev.disabled = state.page === 0;
+        btnNext.disabled = state.page === 7;
+    }
 
     if (state.spread === SPREAD_COUNT - 1 && state.zine?.pdf) {
         btnPdf.href = state.zine.pdf;
@@ -705,12 +728,89 @@ function updateSpreadLabel() {
     }
 }
 
+function updateViewMode() {
+    const ratio = innerWidth / innerHeight;
+    state.viewMode = ratio < 1.0 ? 'single' : 'spread';
+}
+
+function updateCameraForViewMode(animate = true) {
+    if (state.phase !== 'book') return;
+    
+    let targetX = 0;
+    let camZ = 4.5;
+    
+    if (state.viewMode === 'single') {
+        const pw = (4.0 / 4) * 1.6; // QTR_W * 1.6
+        // is current page on left or right?
+        const def = SPREAD_DEFS[state.spread];
+        if (def.left === state.page) {
+            targetX = -(pw / 2) - 0.02;
+        } else if (def.right === state.page) {
+            targetX = (pw / 2) + 0.02;
+        }
+        
+        // Single view needs camera to zoom in more
+        camZ = 3.2;
+    }
+    
+    if (animate) {
+        gsap.to(camera.position, { x: targetX, y: 0.5, z: camZ, duration: 0.8, ease: 'power2.out' });
+        gsap.to(controls.target, { x: targetX, y: 0, z: 0, duration: 0.8, ease: 'power2.out', onUpdate: () => controls.update() });
+    } else {
+        camera.position.set(targetX, 0.5, camZ);
+        controls.target.set(targetX, 0, 0);
+        controls.update();
+    }
+}
+
 function goSpread(delta) {
-    const oldSpread = state.spread;
-    const newSpread = Math.max(0, Math.min(SPREAD_COUNT - 1, oldSpread + delta));
-    if (newSpread === oldSpread) return;
-    flipPage(newSpread, delta);
-    updateSpreadLabel();
+    if (state.viewMode === 'spread') {
+        const oldSpread = state.spread;
+        const newSpread = Math.max(0, Math.min(SPREAD_COUNT - 1, oldSpread + delta));
+        if (newSpread === oldSpread) return;
+        
+        const promise = flipPage(newSpread, delta);
+        if (promise) {
+            promise.then(() => {
+                // Determine page approximation
+                 const def = SPREAD_DEFS[newSpread];
+                 state.page = (delta > 0) ? (def.left !== null ? def.left : def.right) : (def.right !== null ? def.right : def.left);
+                 updateSpreadLabel();
+            });
+        }
+    } else {
+        // Single mode navigation
+        const oldPage = state.page;
+        const newPage = Math.max(0, Math.min(7, oldPage + delta));
+        if (newPage === oldPage) return;
+        
+        moveToPage(newPage, delta);
+    }
+}
+
+function moveToPage(newPage, direction) {
+    let targetSpread = 0;
+    for (let i = 0; i < SPREAD_DEFS.length; i++) {
+        if (SPREAD_DEFS[i].left === newPage || SPREAD_DEFS[i].right === newPage) {
+            targetSpread = i;
+            break;
+        }
+    }
+
+    if (targetSpread !== state.spread) {
+        const promise = flipPage(targetSpread, direction);
+        if (promise) {
+            promise.then(() => {
+                state.page = newPage;
+                updateCameraForViewMode(true);
+                updateSpreadLabel();
+            });
+        }
+    } else {
+        state.page = newPage;
+        updateCameraForViewMode(true);
+        updateSpreadLabel();
+    }
 }
 
 
@@ -767,6 +867,17 @@ window.addEventListener('resize', () => {
     camera.aspect = innerWidth / innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(innerWidth, innerHeight);
+    
+    if (state.phase === 'book') {
+        const oldMode = state.viewMode;
+        updateViewMode();
+        if (oldMode !== state.viewMode) {
+            updateCameraForViewMode(true);
+            updateSpreadLabel();
+        } else {
+            updateCameraForViewMode(false);
+        }
+    }
 });
 
 // ─── Boot ──────────────────────────────────
