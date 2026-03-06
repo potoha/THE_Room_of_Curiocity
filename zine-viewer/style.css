@@ -7,9 +7,9 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-    --bg: #0d0f12;
+    --bg: #2a4266;
     --fg: #e2e8f0;
-    --fg-sub: #67ffa6;
+    --fg-sub: #94a3b8;
     --accent: #d4af37;
     --border: rgba(255, 255, 255, 0.05);
     --radius: 16px;
@@ -58,11 +58,29 @@ html, body {
 #header {
     position: fixed; top: 0; left: 0; right: 0;
     z-index: 100;
-    height: 56px;
-    display: flex; align-items: center; justify-content: center;
-    padding: 0 24px;
-    background: linear-gradient(to bottom, var(--bg) 60%, transparent);
+    height: 64px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px;
+    background: rgba(42, 66, 102, 0.85); /* var(--bg) with opacity */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
     pointer-events: none;
+}
+#header > * { pointer-events: auto; }
+.header-title-link {
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.header-title-link:hover { color: var(--accent); }
+.header-title {
+    font-size: 1.2rem; font-weight: 300;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
 }
 #header > * { pointer-events: auto; }
 .header-title-link {
@@ -71,9 +89,9 @@ html, body {
 }
 .header-title-link:hover { opacity: 0.7; }
 .header-title {
-    font-size: 13px; font-weight: 300;
-    letter-spacing: 0.3em;
-    color: var(--fg);
+    font-size: 1.2rem; font-weight: 300;
+    letter-spacing: 0.1em;
+    color: var(--accent);
 }
 
 /* --- Page Footer --- */
@@ -95,7 +113,7 @@ html, body {
     transition: color 0.3s;
     display: flex; align-items: center; gap: 8px;
 }
-.footer-btn:hover { color: var(--fg); }
+.footer-btn:hover { color: var(--accent); }
 .hamburger-icon { font-size: 16px; margin-right: 4px; }
 
 /* --- Gallery --- */
@@ -169,6 +187,18 @@ html, body {
     color: var(--fg-sub);
 }
 
+/* --- Hero Background Animations --- */
+.hero-bg {
+    background: url('../assets/profile.jpg') center/cover no-repeat;
+    opacity: 0.2;
+    filter: sepia(0.2) saturate(0.8) brightness(0.6);
+    animation: slowZoom 20s infinite alternate;
+}
+@keyframes slowZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
 /* --- 3D Canvas --- */
 #canvas-wrap {
     position: fixed; inset: 0; z-index: 0;
@@ -216,12 +246,19 @@ html, body {
 .page-ui.hidden { opacity: 0; pointer-events: none; }
 
 .page-nav {
-    display: flex; align-items: center; gap: 24px;
+    display: flex; align-items: center; gap: 12px;
+    background: rgba(42, 66, 102, 0.75); /* --bg with high opacity */
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    padding: 6px 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 .page-label {
     font-family: var(--font-sans);
-    font-size: 12px; letter-spacing: 0.2em;
-    color: var(--fg);
+    font-size: 13px; letter-spacing: 0.15em;
+    color: var(--accent); /* highlight label */
+    font-weight: 500;
     min-width: 60px; text-align: center;
 }
 .page-actions {
@@ -269,22 +306,25 @@ html, body {
 }
 
 .btn-page {
-    width: 40px; height: 40px;
+    width: 40px; height: 32px;
     display: flex; align-items: center; justify-content: center;
-    background: transparent;
-    border: 1px solid var(--border);
-    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
     cursor: pointer;
-    font-size: 12px; color: var(--fg);
-    transition: background 0.3s, border-color 0.3s;
+    font-size: 14px; color: var(--fg);
+    transition: background 0.3s, border-color 0.3s, color 0.3s, transform 0.2s;
 }
 .btn-page:hover:not(:disabled) {
-    background: var(--fg);
-    color: var(--bg);
-    border-color: var(--fg);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--accent);
+    transform: scale(1.05);
 }
 .btn-page:disabled {
-    opacity: 0.25; cursor: default;
+    opacity: 0.2; cursor: default;
+    background: transparent;
+    border-color: transparent;
 }
 
 .btn-download {
