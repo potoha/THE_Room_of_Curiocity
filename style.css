@@ -119,6 +119,170 @@ a:hover {
     width: 100%;
 }
 
+/* Entrance Overlay */
+.entrance-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg-color);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.entrance-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.entrance-content h2 {
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.entrance-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+@media (max-width: 480px) {
+    .entrance-buttons {
+        flex-direction: column;
+    }
+}
+
+.entrance-btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    border: none;
+    font-size: 0.95rem;
+    cursor: pointer;
+    font-family: var(--font-body);
+    transition: var(--transition-smooth);
+    background: var(--accent-color);
+    color: #000;
+    font-weight: 500;
+}
+
+.entrance-btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.entrance-btn.outline {
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.entrance-btn.outline:hover {
+    background: rgba(212, 175, 55, 0.1);
+}
+
+/* BGM Controls (Header) */
+.bgm-controls {
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+    position: relative;
+    padding: 0.3rem;
+    border-radius: 30px;
+    transition: var(--transition-smooth);
+    gap: 0.2rem;
+}
+
+.bgm-controls:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.bgm-icon-btn {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.bgm-icon-btn:hover {
+    color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#restart-btn {
+    opacity: 0;
+    width: 0;
+    transform: scale(0);
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bgm-controls:hover #restart-btn {
+    opacity: 1;
+    width: 32px;
+    transform: scale(1);
+}
+
+.volume-slider-container {
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bgm-controls:hover .volume-slider-container {
+    width: 80px;
+    opacity: 1;
+    padding: 0 0.5rem;
+}
+
+.volume-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.volume-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.3);
+}
+
+.footer-music-credit {
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
 /* ヒーローセクション */
 .hero {
     height: 100vh;
@@ -168,6 +332,7 @@ a:hover {
     margin-bottom: 0.5rem;
     background: linear-gradient(135deg, #fff, #a0aec0);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
