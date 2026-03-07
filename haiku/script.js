@@ -113,20 +113,76 @@ function buildNetwork() {
     nodesDataSet = new vis.DataSet();
     edgesDataSet = new vis.DataSet();
     
+    // Calculate degree for each keyword
+    const kwDegrees = {};
+    Object.keys(keywords).forEach(kw => kwDegrees[kw] = 0);
+    haikus.forEach(h => {
+        h.keywords.forEach(kw => {
+            if (kwDegrees[kw] !== undefined) kwDegrees[kw]++;
+        });
+    });
+
+    const SCALE = 12; // Scale factor for coordinates
+    function getRandomInRange(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+    
     // Add Keyword Nodes
     Object.keys(keywords).forEach(kwId => {
         const kwData = keywords[kwId];
+        const degree = kwDegrees[kwId] || 0;
+        
+        let r, theta;
+        const isSeasonal = (kwData.kigo === 'yes' || !!kwData.season);
+        let nodeColor = {
+            background: 'rgba(197, 168, 128, 0.1)',
+            border: '#c5a880',
+            highlight: { background: 'rgba(197, 168, 128, 0.5)', border: '#fff' }
+        };
+
+        if (isSeasonal) {
+            // Seasonal: 30 < r < 85
+            r = getRandomInRange(30, 85) * SCALE;
+            if (kwData.season === 'spring') {
+                theta = getRandomInRange(0, Math.PI/2); // Q1
+                nodeColor = { background: 'rgba(255, 183, 197, 0.1)', border: '#ffb7c5', highlight: { background: 'rgba(255, 183, 197, 0.5)', border: '#fff' } };
+            } else if (kwData.season === 'summer') {
+                theta = getRandomInRange(Math.PI/2, Math.PI); // Q2
+                nodeColor = { background: 'rgba(96, 165, 250, 0.1)', border: '#60a5fa', highlight: { background: 'rgba(96, 165, 250, 0.5)', border: '#fff' } };
+            } else if (kwData.season === 'winter') {
+                theta = getRandomInRange(Math.PI, 3*Math.PI/2); // Q3
+                nodeColor = { background: 'rgba(255, 255, 255, 0.1)', border: '#ffffff', highlight: { background: 'rgba(255, 255, 255, 0.5)', border: '#fff' } };
+            } else if (kwData.season === 'autumn') {
+                theta = getRandomInRange(3*Math.PI/2, 2*Math.PI); // Q4
+                nodeColor = { background: 'rgba(251, 146, 60, 0.1)', border: '#fb923c', highlight: { background: 'rgba(251, 146, 60, 0.5)', border: '#fff' } };
+            } else {
+                theta = getRandomInRange(0, 2*Math.PI); // default
+            }
+        } else {
+            // Non-seasonal
+            if (degree > 1) {
+                // High connectivity: inner circle r < 30
+                r = getRandomInRange(0, 30) * SCALE;
+            } else {
+                // Low connectivity: outer circle r > 85
+                r = getRandomInRange(85, 130) * SCALE;
+            }
+            theta = getRandomInRange(0, 2*Math.PI);
+        }
+
+        const x = r * Math.cos(theta);
+        const y = -(r * Math.sin(theta)); // Invert Y so +MathY is visually Top
+
         nodesDataSet.add({
             id: `kw_${kwId}`,
             label: kwData.label,
             group: 'keyword',
-            value: 20, // size
-            font: { size: 18, color: '#c5a880', face: 'Noto Serif JP' },
-            color: {
-                background: 'rgba(197, 168, 128, 0.1)',
-                border: '#c5a880',
-                highlight: { background: 'rgba(197, 168, 128, 0.5)', border: '#fff' }
-            }
+            value: 15 + (degree * 3), // size
+            x: x,
+            y: y,
+            physics: false, // keep keywords in their assigned locations
+            font: { size: 18, color: nodeColor.border, face: 'Noto Serif JP' },
+            color: nodeColor
         });
     });
 
