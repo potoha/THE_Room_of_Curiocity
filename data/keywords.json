@@ -1,0 +1,1152 @@
+{
+  "k0001": {
+    "label": "さくらんぼ",
+    "reading": "さくらんぼ",
+    "aliases": [
+      "桜桃",
+      "サクランボ",
+      "チェリー",
+      "アメリカンチェリー"
+    ],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "summer"
+  },
+  "k0002": {
+    "label": "氷菓",
+    "reading": "ひょうか",
+    "aliases": [
+      "アイス",
+      "冷菓",
+      "アイスクリーム",
+      "氷菓子"
+    ],
+    "kigo": "yes",
+    "type": "物",
+    "season": "summer"
+  },
+  "k0003": {
+    "label": "霜柱",
+    "reading": "しもばしら",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "地理",
+    "season": "winter"
+  },
+  "k0004": {
+    "label": "足跡",
+    "reading": "あしあと",
+    "aliases": [
+      "あしあと"
+    ],
+    "kigo": "no",
+    "type": "地理",
+    "season": ""
+  },
+  "k0005": {
+    "label": "クリスマス",
+    "reading": "クリスマス",
+    "aliases": [
+      "聖夜"
+    ],
+    "kigo": "yes",
+    "type": "行事",
+    "season": "winter"
+  },
+  "k0006": {
+    "label": "月涼し",
+    "reading": "つきすずし",
+    "aliases": [
+      "涼月"
+    ],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "summer"
+  },
+  "k0007": {
+    "label": "環状線",
+    "reading": "かんじょうせん",
+    "aliases": [
+      "山手線"
+    ],
+    "kigo": "no",
+    "type": "場所",
+    "season": ""
+  },
+  "k0008": {
+    "label": "雑誌",
+    "reading": "ざっし",
+    "aliases": [
+      "週刊誌",
+      "マガジン"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0009": {
+    "label": "ラムネ",
+    "reading": "らむね",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "生活",
+    "season": "summer"
+  },
+  "k0010": {
+    "label": "秋草",
+    "reading": "あきくさ",
+    "aliases": [
+      "秋の草"
+    ],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "autumn"
+  },
+  "k0011": {
+    "label": "蜉蝣",
+    "reading": "かげろう",
+    "aliases": [
+      "カゲロウ",
+      "かげらう"
+    ],
+    "kigo": "yes",
+    "type": "動物",
+    "season": "autumn"
+  },
+  "k0012": {
+    "label": "天使",
+    "reading": "てんし",
+    "aliases": [
+      "エンジェル"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0013": {
+    "label": "天領",
+    "reading": "てんりょう",
+    "aliases": [
+      "蔵の町"
+    ],
+    "kigo": "no",
+    "type": "場所",
+    "season": ""
+  },
+  "k0014": {
+    "label": "鰯雲",
+    "reading": "いわしぐも",
+    "aliases": [
+      "鱗雲",
+      "いわし雲",
+      "うろこ雲",
+      "いわしぐも",
+      "うろこぐも"
+    ],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "autumn"
+  },
+  "k0015": {
+    "label": "秋曇",
+    "reading": "あきぐもり",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "autumn"
+  },
+  "k0016": {
+    "label": "電車",
+    "reading": "電車",
+    "aliases": [
+      "弱冷車",
+      "列車",
+      "汽車",
+      "車両",
+      "車窓",
+      "駅"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0017": {
+    "label": "青蜜柑",
+    "reading": "あおみかん",
+    "aliases": [
+      "青みかん",
+      "あおみかん"
+    ],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "autumn"
+  },
+  "k0018": {
+    "label": "傘",
+    "reading": "かさ",
+    "aliases": [
+      "傘",
+      "かさ",
+      "カサ"
+    ],
+    "kigo": "no",
+    "type": "生活",
+    "season": ""
+  },
+  "k0019": {
+    "label": "凍る",
+    "reading": "凍る",
+    "aliases": [
+      "凍て",
+      "凍"
+    ],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "winter"
+  },
+  "k0020": {
+    "label": "青",
+    "reading": "あお",
+    "aliases": [
+      "あお",
+      "ブルー"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0021": {
+    "label": "ガラス",
+    "reading": "がらす",
+    "aliases": [
+      "硝子",
+      "玻璃"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0022": {
+    "label": "雪",
+    "reading": "ゆき",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "winter"
+  },
+  "k0023": {
+    "label": "大掃除",
+    "reading": "おおそうじ",
+    "aliases": [
+      "大そうじ"
+    ],
+    "kigo": "yes",
+    "type": "生活",
+    "season": "newyear"
+  },
+  "k0024": {
+    "label": "本",
+    "reading": "ほん",
+    "aliases": [
+      "冊",
+      "背表紙",
+      "表紙",
+      "ページ",
+      "頁",
+      "文庫",
+      "古書"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0025": {
+    "label": "蜜柑",
+    "reading": "みかん",
+    "aliases": [
+      "みかん",
+      "ミカン"
+    ],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "winter"
+  },
+  "k0026": {
+    "label": "ひとり",
+    "reading": "ひとり",
+    "aliases": [
+      "一人",
+      "独り",
+      "孤独"
+    ],
+    "kigo": "no",
+    "type": "生活",
+    "season": ""
+  },
+  "k0027": {
+    "label": "鍋",
+    "reading": "なべ",
+    "aliases": [
+      "なべ"
+    ],
+    "kigo": "yes",
+    "type": "生活",
+    "season": "winter"
+  },
+  "k0028": {
+    "label": "テレビ",
+    "reading": "てれび",
+    "aliases": [
+      "テレビジョン",
+      "TV"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0029": {
+    "label": "春光る",
+    "reading": "はるひかる",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "時候",
+    "season": "spring"
+  },
+  "k0030": {
+    "label": "春蝉",
+    "reading": "はるぜみ",
+    "aliases": [
+      "はるぜみ"
+    ],
+    "kigo": "yes",
+    "type": "動物",
+    "season": "spring"
+  },
+  "k0031": {
+    "label": "森",
+    "reading": "もり",
+    "aliases": [
+      "林"
+    ],
+    "kigo": "no",
+    "type": "植物",
+    "season": ""
+  },
+  "k0032": {
+    "label": "ジャージ",
+    "reading": "ジャージ",
+    "aliases": [],
+    "kigo": "no",
+    "type": "生活",
+    "season": ""
+  },
+  "k0033": {
+    "label": "春",
+    "reading": "春",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "spring"
+  },
+  "k0034": {
+    "label": "緑茶",
+    "reading": "りょくちゃ",
+    "aliases": [
+      "茶"
+    ],
+    "kigo": "no",
+    "type": "生活",
+    "season": ""
+  },
+  "k0035": {
+    "label": "詰襟",
+    "reading": "つめえり",
+    "aliases": [],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0036": {
+    "label": "春闇",
+    "reading": "はるやみ",
+    "aliases": [
+      "春の闇"
+    ],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "spring"
+  },
+  "k0037": {
+    "label": "夜",
+    "reading": "よる",
+    "aliases": [
+      "よる",
+      "夜闇",
+      "闇"
+    ],
+    "kigo": "no",
+    "type": "時間",
+    "season": ""
+  },
+  "k0038": {
+    "label": "指",
+    "reading": "ゆび",
+    "aliases": [
+      "指先",
+      "手"
+    ],
+    "kigo": "no",
+    "type": "植物",
+    "season": ""
+  },
+  "k0039": {
+    "label": "新緑",
+    "reading": "しんりょく",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "spring"
+  },
+  "k0040": {
+    "label": "私",
+    "reading": "わたし",
+    "aliases": [
+      "我",
+      "わたし",
+      "われ",
+      "わたくし",
+      "吾"
+    ],
+    "kigo": "no",
+    "type": "身体",
+    "season": ""
+  },
+  "k0041": {
+    "label": "バター",
+    "reading": "バター",
+    "aliases": [
+      "マーガリン"
+    ],
+    "kigo": "no",
+    "type": "生活",
+    "season": ""
+  },
+  "k0042": {
+    "label": "長靴",
+    "reading": "ながぐつ",
+    "aliases": [
+      "長ぐつ"
+    ],
+    "kigo": "no",
+    "type": "生活",
+    "season": ""
+  },
+  "k0043": {
+    "label": "蛙",
+    "reading": "かえる",
+    "aliases": [
+      "かわず",
+      "かはず",
+      "かえる"
+    ],
+    "kigo": "yes",
+    "type": "動物",
+    "season": "spring"
+  },
+  "k0044": {
+    "label": "プラネタリウム",
+    "reading": "プラネタリウム",
+    "aliases": [],
+    "kigo": "no",
+    "type": "場所",
+    "season": ""
+  },
+  "k0045": {
+    "label": "春眠",
+    "reading": "しゅんみん",
+    "aliases": [
+      "春眠し"
+    ],
+    "kigo": "yes",
+    "type": "生活",
+    "season": "spring"
+  },
+  "k0046": {
+    "label": "桜の実",
+    "reading": "さくらのみ",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "summer"
+  },
+  "k0047": {
+    "label": "草笛",
+    "reading": "くさぶえ",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "生活",
+    "season": "summer"
+  },
+  "k0048": {
+    "label": "蛇",
+    "reading": "へび",
+    "aliases": [
+      "くちなは",
+      "ヘビ",
+      "へび",
+      "ながむし",
+      "くちなわ",
+      "へみ",
+      "じむぐり",
+      "水神"
+    ],
+    "kigo": "yes",
+    "type": "動物",
+    "season": "summer"
+  },
+  "k0049": {
+    "label": "書斎",
+    "reading": "しょさい",
+    "aliases": [
+      "部屋",
+      "へや",
+      "アトリエ",
+      "仕事部屋"
+    ],
+    "kigo": "no",
+    "type": "場所",
+    "season": ""
+  },
+  "k0050": {
+    "label": "胡瓜",
+    "reading": "きゅうり",
+    "aliases": [
+      "きゅうり"
+    ],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "summer"
+  },
+  "k0051": {
+    "label": "滴り",
+    "reading": "したたり",
+    "aliases": [
+      "滴る",
+      "したたり",
+      "したたる"
+    ],
+    "kigo": "yes",
+    "type": "地理",
+    "season": "summer"
+  },
+  "k0052": {
+    "label": "とんぼ玉",
+    "reading": "とんぼだま",
+    "aliases": [],
+    "kigo": "no",
+    "type": "生活",
+    "season": ""
+  },
+  "k0053": {
+    "label": "残暑",
+    "reading": "ざんしょ",
+    "aliases": [
+      "残る夏"
+    ],
+    "kigo": "yes",
+    "type": "時候",
+    "season": "summer"
+  },
+  "k0054": {
+    "label": "身体",
+    "reading": "からだ",
+    "aliases": [
+      "からだ",
+      "身",
+      "体",
+      "全身"
+    ],
+    "kigo": "no",
+    "type": "身体",
+    "season": ""
+  },
+  "k0055": {
+    "label": "妖精",
+    "reading": "ようせい",
+    "aliases": [],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0056": {
+    "label": "草の花",
+    "reading": "くさのはな",
+    "aliases": [
+      "草の初花",
+      "野の花",
+      "百草の花",
+      "くさのはな",
+      "ののはな"
+    ],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "autumn"
+  },
+  "k0057": {
+    "label": "鵙",
+    "reading": "もず",
+    "aliases": [
+      "もず",
+      "モズ",
+      "百舌鳥",
+      "百舌"
+    ],
+    "kigo": "yes",
+    "type": "動物",
+    "season": "autumn"
+  },
+  "k0058": {
+    "label": "夕",
+    "reading": "ゆう",
+    "aliases": [
+      "暮れ",
+      "日暮れ",
+      "ゆう"
+    ],
+    "kigo": "no",
+    "type": "天文",
+    "season": ""
+  },
+  "k0059": {
+    "label": "赤とんぼ",
+    "reading": "あかとんぼ",
+    "aliases": [
+      "あかとんぼ",
+      "赤蜻蛉"
+    ],
+    "kigo": "yes",
+    "type": "動物",
+    "season": "autumn"
+  },
+  "k0060": {
+    "label": "空",
+    "reading": "そら",
+    "aliases": [],
+    "kigo": "no",
+    "type": "天文",
+    "season": ""
+  },
+  "k0061": {
+    "label": "風光る",
+    "reading": "かぜひかる",
+    "aliases": [
+      "光る風"
+    ],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "spring"
+  },
+  "k0062": {
+    "label": "ライブ",
+    "reading": "らいぶ",
+    "aliases": [
+      "路上ライブ",
+      "コンサート",
+      "演奏",
+      "音楽",
+      "譜"
+    ],
+    "kigo": "no",
+    "type": "生活",
+    "season": ""
+  },
+  "k0063": {
+    "label": "ブランコ",
+    "reading": "ぶらんこ",
+    "aliases": [
+      "ぶらんこ",
+      "鞦韆",
+      "しゅうせん"
+    ],
+    "kigo": "yes",
+    "type": "生活",
+    "season": "spring"
+  },
+  "k0064": {
+    "label": "時間",
+    "reading": "じかん",
+    "aliases": [
+      "針の進み",
+      "時計"
+    ],
+    "kigo": "no",
+    "type": "時間",
+    "season": ""
+  },
+  "k0065": {
+    "label": "蝶",
+    "reading": "ちょう",
+    "aliases": [
+      "ちょう",
+      "ちょうちょう",
+      "てふ",
+      "てふてふ"
+    ],
+    "kigo": "yes",
+    "type": "動物",
+    "season": "spring"
+  },
+  "k0066": {
+    "label": "過去",
+    "reading": "かこ",
+    "aliases": [
+      "おととい",
+      "きのう",
+      "一昨日",
+      "昨日"
+    ],
+    "kigo": "no",
+    "type": "時間",
+    "season": ""
+  },
+  "k0067": {
+    "label": "カーネーション",
+    "reading": "かーねーしょん",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "summer"
+  },
+  "k0068": {
+    "label": "ピアノ",
+    "reading": "ぴあの",
+    "aliases": [
+      "黒鍵",
+      "鍵盤",
+      "白鍵",
+      "オルガン",
+      "シンセサイザー"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0069": {
+    "label": "シャツ",
+    "reading": "しゃつ",
+    "aliases": [
+      "ティーシャツ",
+      "Tシャツ"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0070": {
+    "label": "冷蔵庫",
+    "reading": "れいぞうこ",
+    "aliases": [
+      "冷凍庫"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0071": {
+    "label": "玉子",
+    "reading": "たまご",
+    "aliases": [
+      "卵",
+      "たまご"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0072": {
+    "label": "朝",
+    "reading": "あさ",
+    "aliases": [],
+    "kigo": "no",
+    "type": "時間",
+    "season": ""
+  },
+  "k0073": {
+    "label": "日曜日",
+    "reading": "にちようび",
+    "aliases": [
+      "日曜"
+    ],
+    "kigo": "no",
+    "type": "時間",
+    "season": ""
+  },
+  "k0074": {
+    "label": "毛虫",
+    "reading": "けむし",
+    "aliases": [
+      "いもむし",
+      "芋虫",
+      "けむし"
+    ],
+    "kigo": "yes",
+    "type": "動物",
+    "season": "summer"
+  },
+  "k0075": {
+    "label": "石碑",
+    "reading": "せきひ",
+    "aliases": [
+      "忠魂碑"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0076": {
+    "label": "サルビア",
+    "reading": "さるびあ",
+    "aliases": [
+      "さるびあ"
+    ],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "summer"
+  },
+  "k0077": {
+    "label": "アスファルト",
+    "reading": "あすふぁると",
+    "aliases": [
+      "コンクリート"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0078": {
+    "label": "虫籠",
+    "reading": "むしかご",
+    "aliases": [
+      "むしかご",
+      "虫かご"
+    ],
+    "kigo": "yes",
+    "type": "生活",
+    "season": "autumn"
+  },
+  "k0079": {
+    "label": "霧",
+    "reading": "きり",
+    "aliases": [
+      "霧深し",
+      "濃霧",
+      "八重霧"
+    ],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "autumn"
+  },
+  "k0080": {
+    "label": "彫刻",
+    "reading": "ちょうこく",
+    "aliases": [
+      "像",
+      "スカルプチャー"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0081": {
+    "label": "秋",
+    "reading": "あき",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "autumn"
+  },
+  "k0082": {
+    "label": "木漏れ日",
+    "reading": "こもれび",
+    "aliases": [],
+    "kigo": "no",
+    "type": "天文",
+    "season": ""
+  },
+  "k0083": {
+    "label": "月",
+    "reading": "つき",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "autumn"
+  },
+  "k0084": {
+    "label": "ソーダ水",
+    "reading": "そーだすい",
+    "aliases": [
+      "ソーダ",
+      "サイダー",
+      "コーラ",
+      "アイスコーヒー",
+      "アイス珈琲"
+    ],
+    "kigo": "yes",
+    "type": "生活",
+    "season": "summer"
+  },
+  "k0085": {
+    "label": "猫",
+    "reading": "ねこ",
+    "aliases": [
+      "ネコ",
+      "ねこ"
+    ],
+    "kigo": "no",
+    "type": "動物",
+    "season": ""
+  },
+  "k0086": {
+    "label": "眼鏡",
+    "reading": "めがね",
+    "aliases": [
+      "めがね",
+      "メガネ"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0087": {
+    "label": "燕帰る",
+    "reading": "つばめかえる",
+    "aliases": [
+      "燕帰",
+      "つばめ帰る"
+    ],
+    "kigo": "yes",
+    "type": "動物",
+    "season": "autumn"
+  },
+  "k0088": {
+    "label": "星",
+    "reading": "ほし",
+    "aliases": [],
+    "kigo": "no",
+    "type": "天文",
+    "season": ""
+  },
+  "k0089": {
+    "label": "春の星",
+    "reading": "はるのほし",
+    "aliases": [
+      "春星",
+      "星朧"
+    ],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "spring"
+  },
+  "k0090": {
+    "label": "桜",
+    "reading": "さくら",
+    "aliases": [
+      "花サクラ",
+      "ソメイヨシノ",
+      "八重桜"
+    ],
+    "kigo": "yes",
+    "type": "植物",
+    "season": ""
+  },
+  "k0091": {
+    "label": "桜吹雪",
+    "reading": "さくらふぶき",
+    "aliases": [
+      "花筏",
+      "はないかだ",
+      "花いかだ"
+    ],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "spring"
+  },
+  "k0092": {
+    "label": "六畳間",
+    "reading": "六畳間",
+    "aliases": [
+      "一人暮らし",
+      "六畳",
+      "八畳",
+      "ワンルーム"
+    ],
+    "kigo": "no",
+    "type": "場所",
+    "season": ""
+  },
+  "k0093": {
+    "label": "薬缶",
+    "reading": "やかん",
+    "aliases": [
+      "ヤカン"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0094": {
+    "label": "澄む",
+    "reading": "すむ",
+    "aliases": [
+      "澄めり",
+      "澄んで"
+    ],
+    "kigo": "yes",
+    "type": "時候",
+    "season": "autumn"
+  },
+  "k0095": {
+    "label": "炎",
+    "reading": "ほのお",
+    "aliases": [
+      "火"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0096": {
+    "label": "空梅雨",
+    "reading": "からつゆ",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "summer"
+  },
+  "k0097": {
+    "label": "影長し",
+    "reading": "かげながし",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "autumn"
+  },
+  "k0098": {
+    "label": "露",
+    "reading": "つゆ",
+    "aliases": [
+      "白露",
+      "はくろ"
+    ],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "autumn"
+  },
+  "k0099": {
+    "label": "街灯",
+    "reading": "街灯",
+    "aliases": [
+      "電灯"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0100": {
+    "label": "凩",
+    "reading": "こがらし",
+    "aliases": [
+      "木枯らし"
+    ],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "winter"
+  },
+  "k0101": {
+    "label": "煙草",
+    "reading": "たばこ",
+    "aliases": [
+      "たばこ",
+      "紫煙",
+      "喫煙所",
+      "タバコ"
+    ],
+    "kigo": "no",
+    "type": "生活",
+    "season": ""
+  },
+  "k0102": {
+    "label": "葉桜",
+    "reading": "はざくら",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "summer"
+  },
+  "k0103": {
+    "label": "自転車",
+    "reading": "じてんしゃ",
+    "aliases": [
+      "チャリ"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0104": {
+    "label": "夏",
+    "reading": "なつ",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "時候",
+    "season": "summer"
+  },
+  "k0105": {
+    "label": "立夏",
+    "reading": "りっか",
+    "aliases": [
+      "夏立"
+    ],
+    "kigo": "yes",
+    "type": "時候",
+    "season": "summer"
+  },
+  "k0106": {
+    "label": "街",
+    "reading": "まち",
+    "aliases": [
+      "都会",
+      "町",
+      "都市"
+    ],
+    "kigo": "no",
+    "type": "場所",
+    "season": ""
+  },
+  "k0107": {
+    "label": "夜明け",
+    "reading": "よあけ",
+    "aliases": [],
+    "kigo": "no",
+    "type": "時間",
+    "season": ""
+  },
+  "k0108": {
+    "label": "コーヒー",
+    "reading": "こーひー",
+    "aliases": [
+      "珈琲"
+    ],
+    "kigo": "no",
+    "type": "生活",
+    "season": ""
+  },
+  "k0109": {
+    "label": "梅雨",
+    "reading": "つゆ",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "時候",
+    "season": "summer"
+  }
+}

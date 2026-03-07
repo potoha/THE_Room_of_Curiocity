@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>俳句宇宙 | Haiku Universe</title>
+    <!-- Fonts: Noto Serif JP for Haiku and Zen Kaku Gothic New -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- vis-network -->
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ヘッダー (ナビゲーション) -->
+    <header class="navbar">
+        <a href="../index.html" class="nav-brand">十六月書房</a>
+        <nav class="nav-links">
+            <a href="../index.html#about">私について</a>
+            <a href="../index.html#works">作品</a>
+            <a href="../index.html#contact">リンク</a>
+        </nav>
+    </header>
+
+    <!-- Fullscreen Network Canvas -->
+    <div id="network-canvas"></div>
+
+    <!-- UI Overlay -->
+    <div id="ui-layer">
+        
+        <!-- Header / Breadcrumbs Log -->
+        <header id="history-log">
+            <div class="log-title">探索の軌跡</div>
+            <ul id="breadcrumb-list">
+                <!-- Javascript will populate this -->
+            </ul>
+        </header>
+
+        <!-- Right detail panel -->
+        <aside id="detail-panel" class="hidden">
+            <button id="close-panel" aria-label="閉じる">×</button>
+            
+            <div id="haiku-view" class="view-section hidden">
+                <div class="haiku-container haiku-header">
+                    <p id="haiku-note" class="haiku-note"></p>
+                    <p id="haiku-text" class="vertical-text"></p>
+                    <p id="haiku-year" class="haiku-year"></p>
+                </div>
+                
+                <div class="time-chain">
+                    <h3>この頃の俳句</h3>
+                    <ul id="time-chain-list" class="item-list"></ul>
+                </div>
+            </div>
+
+            <div id="keyword-view" class="view-section hidden">
+                <h2 id="keyword-title"></h2>
+                <div class="keyword-haikus">
+                    <h3>この言葉を含む俳句</h3>
+                    <ul id="keyword-haiku-list" class="item-list"></ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Start Screen overlay -->
+        <div id="start-screen" class="overlay">
+            <div class="start-content">
+                <div class="start-haiku-wrapper">
+                    <p id="start-haiku-text" class="vertical-text start-interactive"></p>
+                    <p id="start-haiku-year" class="vertical-text small-text"></p>
+                </div>
+                <!-- Action buttons -->
+                <div class="start-actions">
+                    <button class="btn-text-ghost" id="start-random-btn">⟳ 別の句をめくる</button>
+                    <button class="btn-outline" id="start-enter-btn">この句から宇宙へ入る</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading overlay -->
+        <div id="loading" class="overlay">
+            <div class="spinner"></div>
+            <p>星々を繋いでいます...</p>
+        </div>
+
+    </div>
+
+    <!-- フッター -->
+    <footer>
+        <p>&copy; 2026 Charlotte:詩抄-POLANOID (十六月書房). All Rights Reserved.</p>
+    </footer>
+
+    <!-- Main Application Logic -->
+    <script src="script.js"></script>
+</body>
+</html>
