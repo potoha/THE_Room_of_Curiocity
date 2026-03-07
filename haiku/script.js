@@ -85,8 +85,15 @@ function pickRandomStartHaiku() {
     currentStartHaiku.keywords.forEach(kwId => {
         const kwData = keywords[kwId];
         if (kwData) {
-            const regex = new RegExp(kwData.label, 'g');
-            htmlText = htmlText.replace(regex, `<span class="keyword-link" data-kw="${kwId}">${kwData.label}</span>`);
+            const searchTerms = [kwData.label];
+            if (kwData.aliases && Array.isArray(kwData.aliases)) {
+                searchTerms.push(...kwData.aliases);
+            }
+            // Sort by length desc to prevent partial matches replacing longer phrases
+            searchTerms.sort((a, b) => b.length - a.length);
+            const escapedTerms = searchTerms.map(t => t.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&'));
+            const regex = new RegExp(`(${escapedTerms.join('|')})`, 'g');
+            htmlText = htmlText.replace(regex, `<span class="keyword-link" data-kw="${kwId}">$1</span>`);
         }
     });
     
@@ -313,12 +320,18 @@ function showHaiku(id) {
 
     // Build text with clickable keywords
     let htmlText = haiku.text;
-    // Simple naive replacement (can be improved for overlapping keywords)
+    // Replace labels and aliases with span links
     haiku.keywords.forEach(kwId => {
         const kwData = keywords[kwId];
         if (kwData) {
-            const regex = new RegExp(kwData.label, 'g');
-            htmlText = htmlText.replace(regex, `<span class="keyword-link" data-kw="${kwId}">${kwData.label}</span>`);
+            const searchTerms = [kwData.label];
+            if (kwData.aliases && Array.isArray(kwData.aliases)) {
+                searchTerms.push(...kwData.aliases);
+            }
+            searchTerms.sort((a, b) => b.length - a.length);
+            const escapedTerms = searchTerms.map(t => t.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&'));
+            const regex = new RegExp(`(${escapedTerms.join('|')})`, 'g');
+            htmlText = htmlText.replace(regex, `<span class="keyword-link" data-kw="${kwId}">$1</span>`);
         }
     });
 
