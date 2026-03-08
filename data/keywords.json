@@ -19,7 +19,8 @@
       "アイス",
       "冷菓",
       "アイスクリーム",
-      "氷菓子"
+      "氷菓子",
+      "かき氷"
     ],
     "kigo": "yes",
     "type": "物",
@@ -156,7 +157,10 @@
       "車窓",
       "駅",
       "環状線",
-      "こだま"
+      "こだま",
+      "終電",
+      "始発",
+      "鈍行"
     ],
     "kigo": "no",
     "type": "物",
@@ -245,8 +249,13 @@
       "表紙",
       "ページ",
       "頁",
+      "新書",
       "文庫",
-      "古書"
+      "積読",
+      "古書",
+      "詩集",
+      "小説",
+      "漫画"
     ],
     "kigo": "no",
     "type": "物",
@@ -335,7 +344,9 @@
   "k0033": {
     "label": "春",
     "reading": "春",
-    "aliases": [],
+    "aliases": [
+      "春隣"
+    ],
     "kigo": "yes",
     "type": "天文",
     "season": "spring"
@@ -387,10 +398,15 @@
     "reading": "ゆび",
     "aliases": [
       "指先",
-      "手"
+      "手",
+      "親指",
+      "人差し指",
+      "薬指",
+      "小指",
+      "爪"
     ],
     "kigo": "no",
-    "type": "植物",
+    "type": "身体",
     "season": ""
   },
   "k0039": {
@@ -409,7 +425,9 @@
       "わたし",
       "われ",
       "わたくし",
-      "吾"
+      "吾",
+      "僕",
+      "ぼく"
     ],
     "kigo": "no",
     "type": "身体",
@@ -625,7 +643,9 @@
   "k0060": {
     "label": "空",
     "reading": "そら",
-    "aliases": [],
+    "aliases": [
+      "そら"
+    ],
     "kigo": "no",
     "type": "天文",
     "season": ""
@@ -761,7 +781,9 @@
   "k0072": {
     "label": "朝",
     "reading": "あさ",
-    "aliases": [],
+    "aliases": [
+      "今朝"
+    ],
     "kigo": "no",
     "type": "時間",
     "season": ""
@@ -871,7 +893,10 @@
   "k0083": {
     "label": "月",
     "reading": "つき",
-    "aliases": [],
+    "aliases": [
+      "満月",
+      "望月"
+    ],
     "kigo": "yes",
     "type": "天文",
     "season": "autumn"
@@ -947,7 +972,8 @@
     "label": "桜",
     "reading": "さくら",
     "aliases": [
-      "花サクラ",
+      "花",
+      "サクラ",
       "ソメイヨシノ",
       "八重桜"
     ],
@@ -1114,7 +1140,8 @@
     "aliases": [
       "都会",
       "町",
-      "都市"
+      "都市",
+      "まち"
     ],
     "kigo": "no",
     "type": "場所",
@@ -1162,7 +1189,9 @@
     "reading": "じぇいぽっぷ",
     "aliases": [
       "YOASOBI",
-      "ヨルシカ"
+      "ヨルシカ",
+      "椎名林檎",
+      "ずっと真夜中でいいのに"
     ],
     "kigo": "no",
     "type": "生活",
@@ -1173,7 +1202,8 @@
     "reading": "ひるね",
     "aliases": [
       "ごすい",
-      "居眠り"
+      "居眠り",
+      "白昼夢"
     ],
     "kigo": "no",
     "type": "生活",
@@ -1254,7 +1284,8 @@
       "数学",
       "化学",
       "医学",
-      "サイエンス"
+      "サイエンス",
+      "数Ⅱ"
     ],
     "kigo": "no",
     "type": "物",
@@ -1285,7 +1316,8 @@
     "label": "恋",
     "reading": "こい",
     "aliases": [
-      "恋愛"
+      "恋愛",
+      "好き"
     ],
     "kigo": "no",
     "type": "感情・状態",
@@ -1335,5 +1367,1014 @@
     "kigo": "yes",
     "type": "時候",
     "season": "autumn"
+  },
+  "k0129": {
+    "label": "階段",
+    "reading": "かいだん",
+    "aliases": [
+      "石段"
+    ],
+    "kigo": "no",
+    "type": "場所",
+    "season": ""
+  },
+  "k0130": {
+    "label": "巻雲",
+    "reading": "けんうん",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "autumn"
+  },
+  "k0131": {
+    "label": "落書き",
+    "reading": "らくがき",
+    "aliases": [
+      "グラフィティ"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0132": {
+    "label": "橋",
+    "reading": "はし",
+    "aliases": [],
+    "kigo": "no",
+    "type": "場所",
+    "season": ""
+  },
+  "k0133": {
+    "label": "曼珠沙華",
+    "reading": "まんじゅしゃげ",
+    "aliases": [
+      "彼岸花",
+      "ヒガンバナ"
+    ],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "autumn"
+  },
+  "k0134": {
+    "label": "墓",
+    "reading": "はか",
+    "aliases": [
+      "仏壇",
+      "墓標"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0135": {
+    "label": "すすき",
+    "reading": "すすき",
+    "aliases": [
+      "芒",
+      "薄",
+      "ススキ",
+      "尾花"
+    ],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "autumn"
+  },
+  "k0136": {
+    "label": "野分",
+    "reading": "のわき",
+    "aliases": [
+      "台風",
+      "颱風のわき"
+    ],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "autumn"
+  },
+  "k0137": {
+    "label": "うわさ話",
+    "reading": "うわさばなし",
+    "aliases": [
+      "噂",
+      "噂話",
+      "話題"
+    ],
+    "kigo": "no",
+    "type": "生活",
+    "season": ""
+  },
+  "k0138": {
+    "label": "家守",
+    "reading": "やもり",
+    "aliases": [
+      "やもり",
+      "ヤモリ"
+    ],
+    "kigo": "yes",
+    "type": "動物",
+    "season": "summer"
+  },
+  "k0139": {
+    "label": "スマートフォン",
+    "reading": "すまーとふぉん",
+    "aliases": [
+      "スマホ",
+      "ケータイ",
+      "画面",
+      "携帯電話",
+      "携帯"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0140": {
+    "label": "十二月",
+    "reading": "じゅうにがつ",
+    "aliases": [
+      "師走",
+      "師走尽"
+    ],
+    "kigo": "yes",
+    "type": "時候",
+    "season": "winter"
+  },
+  "k0141": {
+    "label": "冷たし",
+    "reading": "つめたし",
+    "aliases": [
+      "冷た"
+    ],
+    "kigo": "yes",
+    "type": "時候",
+    "season": "newyear"
+  },
+  "k0142": {
+    "label": "雨",
+    "reading": "あめ",
+    "aliases": [],
+    "kigo": "no",
+    "type": "天文",
+    "season": ""
+  },
+  "k0143": {
+    "label": "旅",
+    "reading": "たび",
+    "aliases": [
+      "旅行"
+    ],
+    "kigo": "no",
+    "type": "生活",
+    "season": ""
+  },
+  "k0144": {
+    "label": "赤",
+    "reading": "あか",
+    "aliases": [
+      "朱",
+      "緋",
+      "紅"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0145": {
+    "label": "着物",
+    "reading": "きもの",
+    "aliases": [
+      "帯"
+    ],
+    "kigo": "no",
+    "type": "生活",
+    "season": ""
+  },
+  "k0146": {
+    "label": "冴える",
+    "reading": "さえる",
+    "aliases": [
+      "冴え",
+      "冴ゆ"
+    ],
+    "kigo": "yes",
+    "type": "時候",
+    "season": "winter"
+  },
+  "k0147": {
+    "label": "冬鵙",
+    "reading": "ふゆもず",
+    "aliases": [
+      "冬百舌",
+      "冬もず"
+    ],
+    "kigo": "yes",
+    "type": "動物",
+    "season": "winter"
+  },
+  "k0148": {
+    "label": "冬",
+    "reading": "ふゆ",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "時候",
+    "season": "winter"
+  },
+  "k0149": {
+    "label": "コート",
+    "reading": "コート",
+    "aliases": [
+      "外套",
+      "上着"
+    ],
+    "kigo": "yes",
+    "type": "生活",
+    "season": "winter"
+  },
+  "k0150": {
+    "label": "ドラマ",
+    "reading": "どらま",
+    "aliases": [
+      "連ドラ",
+      "劇"
+    ],
+    "kigo": "no",
+    "type": "生活",
+    "season": ""
+  },
+  "k0151": {
+    "label": "餅",
+    "reading": "もち",
+    "aliases": [],
+    "kigo": "no",
+    "type": "生活",
+    "season": "newyear"
+  },
+  "k0152": {
+    "label": "初読経",
+    "reading": "はつどきょう",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "行事",
+    "season": "newyear"
+  },
+  "k0153": {
+    "label": "三月",
+    "reading": "さんがつ",
+    "aliases": [
+      "弥生"
+    ],
+    "kigo": "yes",
+    "type": "時候",
+    "season": "spring"
+  },
+  "k0154": {
+    "label": "再会",
+    "reading": "さいかい",
+    "aliases": [
+      "ひさしぶり",
+      "久しぶり"
+    ],
+    "kigo": "no",
+    "type": "感情・状態",
+    "season": ""
+  },
+  "k0155": {
+    "label": "年越し",
+    "reading": "としこし",
+    "aliases": [
+      "年を越"
+    ],
+    "kigo": "yes",
+    "type": "時候",
+    "season": "newyear"
+  },
+  "k0156": {
+    "label": "髪",
+    "reading": "かみ",
+    "aliases": [],
+    "kigo": "no",
+    "type": "身体",
+    "season": ""
+  },
+  "k0157": {
+    "label": "死",
+    "reading": "し",
+    "aliases": [
+      "希死念慮",
+      "余命",
+      "死にたい",
+      "殺せ"
+    ],
+    "kigo": "no",
+    "type": "感情・状態",
+    "season": ""
+  },
+  "k0158": {
+    "label": "雪",
+    "reading": "ゆき",
+    "aliases": [
+      "六花",
+      "ゆき"
+    ],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "winter"
+  },
+  "k0159": {
+    "label": "冬日",
+    "reading": "ふゆひ",
+    "aliases": [
+      "冬の日",
+      "冬日向"
+    ],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "winter"
+  },
+  "k0160": {
+    "label": "凍空",
+    "reading": "いてぞら",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "winter"
+  },
+  "k0161": {
+    "label": "時雨",
+    "reading": "しぐれ",
+    "aliases": [
+      "片時雨"
+    ],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "winter"
+  },
+  "k0162": {
+    "label": "梅",
+    "reading": "うめ",
+    "aliases": [
+      "紅梅",
+      "白梅"
+    ],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "spring"
+  },
+  "k0163": {
+    "label": "冬の梅",
+    "reading": "ふゆのうめ",
+    "aliases": [
+      "寒梅",
+      "雪中梅"
+    ],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "winter"
+  },
+  "k0164": {
+    "label": "霞",
+    "reading": "かすみ",
+    "aliases": [
+      "春霞",
+      "かすみ花霞"
+    ],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "spring"
+  },
+  "k0165": {
+    "label": "静か",
+    "reading": "しずか",
+    "aliases": [
+      "しずか",
+      "静寂"
+    ],
+    "kigo": "no",
+    "type": "感情・状態",
+    "season": ""
+  },
+  "k0166": {
+    "label": "靴",
+    "reading": "くつ",
+    "aliases": [
+      "スニーカー",
+      "革靴",
+      "ブーツ"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0167": {
+    "label": "泥",
+    "reading": "どろ",
+    "aliases": [],
+    "kigo": "no",
+    "type": "地理",
+    "season": ""
+  },
+  "k0168": {
+    "label": "くらし",
+    "reading": "くらし",
+    "aliases": [
+      "暮らし",
+      "営み",
+      "日常",
+      "日々"
+    ],
+    "kigo": "no",
+    "type": "時間",
+    "season": ""
+  },
+  "k0169": {
+    "label": "スカート",
+    "reading": "スカート",
+    "aliases": [],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0170": {
+    "label": "花散る",
+    "reading": "はなちる",
+    "aliases": [
+      "花の散る",
+      "桜散る"
+    ],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "spring"
+  },
+  "k0171": {
+    "label": "ナガミヒナゲシ",
+    "reading": "ながみひなげし",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "spring"
+  },
+  "k0172": {
+    "label": "橙",
+    "reading": "だいだい",
+    "aliases": [
+      "オレンジ"
+    ],
+    "kigo": "no",
+    "type": "感情・状態",
+    "season": ""
+  },
+  "k0173": {
+    "label": "今日",
+    "reading": "きょう",
+    "aliases": [],
+    "kigo": "no",
+    "type": "時間",
+    "season": ""
+  },
+  "k0174": {
+    "label": "凍て返る",
+    "reading": "いてかえる",
+    "aliases": [
+      "冴え返る"
+    ],
+    "kigo": "no",
+    "type": "時候",
+    "season": "spring"
+  },
+  "k0175": {
+    "label": "睫毛",
+    "reading": "まつげ",
+    "aliases": [
+      "まつ毛"
+    ],
+    "kigo": "no",
+    "type": "身体",
+    "season": ""
+  },
+  "k0176": {
+    "label": "四月",
+    "reading": "しがつ",
+    "aliases": [
+      "卯月",
+      "四月尽"
+    ],
+    "kigo": "yes",
+    "type": "時候",
+    "season": "spring"
+  },
+  "k0177": {
+    "label": "椿",
+    "reading": "つばき",
+    "aliases": [
+      "落椿",
+      "ツバキ"
+    ],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "spring"
+  },
+  "k0178": {
+    "label": "風鈴",
+    "reading": "ふうりん",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "生活",
+    "season": "summer"
+  },
+  "k0179": {
+    "label": "午後",
+    "reading": "ごご",
+    "aliases": [
+      "午后",
+      "昼過ぎ"
+    ],
+    "kigo": "no",
+    "type": "時間",
+    "season": ""
+  },
+  "k0180": {
+    "label": "卒業",
+    "reading": "そつぎょう",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "生活",
+    "season": "spring"
+  },
+  "k0181": {
+    "label": "信号",
+    "reading": "しんごう",
+    "aliases": [],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0182": {
+    "label": "燕",
+    "reading": "つばめ",
+    "aliases": [
+      "つばくらめ"
+    ],
+    "kigo": "yes",
+    "type": "動物",
+    "season": "summer"
+  },
+  "k0183": {
+    "label": "惑星",
+    "reading": "わくせい",
+    "aliases": [
+      "水星",
+      "わくせい",
+      "金星",
+      "火星",
+      "木星",
+      "土星"
+    ],
+    "kigo": "no",
+    "type": "天文",
+    "season": ""
+  },
+  "k0184": {
+    "label": "蝉",
+    "reading": "せみ",
+    "aliases": [
+      "セミ"
+    ],
+    "kigo": "yes",
+    "type": "動物",
+    "season": "summer"
+  },
+  "k0185": {
+    "label": "秋去る",
+    "reading": "あきさる",
+    "aliases": [
+      "秋は住ぬ"
+    ],
+    "kigo": "yes",
+    "type": "時候",
+    "season": "winter"
+  },
+  "k0186": {
+    "label": "冬の月",
+    "reading": "ふゆのつき",
+    "aliases": [
+      "冷月",
+      "寒月",
+      "月冴え",
+      "月冴ゆ"
+    ],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "winter"
+  },
+  "k0187": {
+    "label": "熱帯夜",
+    "reading": "ねったいや",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "summer"
+  },
+  "k0188": {
+    "label": "天高し",
+    "reading": "てんたかし",
+    "aliases": [
+      "天高く馬肥える秋"
+    ],
+    "kigo": "yes",
+    "type": "時候",
+    "season": "autumn"
+  },
+  "k0189": {
+    "label": "バス",
+    "reading": "ばす",
+    "aliases": [],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0190": {
+    "label": "夜長",
+    "reading": "よなが",
+    "aliases": [
+      "秋の夜",
+      "宵闇",
+      "良夜"
+    ],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "autumn"
+  },
+  "k0191": {
+    "label": "映画",
+    "reading": "えいが",
+    "aliases": [
+      "ムービー、フイルム",
+      "シネマ",
+      "キネマ"
+    ],
+    "kigo": "no",
+    "type": "生活",
+    "season": ""
+  },
+  "k0192": {
+    "label": "万両",
+    "reading": "まんりょう",
+    "aliases": [
+      "千両"
+    ],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "winter"
+  },
+  "k0193": {
+    "label": "皆既月食",
+    "reading": "かいきげっっしょく",
+    "aliases": [
+      "皆既蝕"
+    ],
+    "kigo": "no",
+    "type": "天文",
+    "season": ""
+  },
+  "k0194": {
+    "label": "昼",
+    "reading": "ひる",
+    "aliases": [
+      "午",
+      "正午"
+    ],
+    "kigo": "no",
+    "type": "時間",
+    "season": ""
+  },
+  "k0195": {
+    "label": "風",
+    "reading": "かぜ",
+    "aliases": [],
+    "kigo": "no",
+    "type": "天文",
+    "season": ""
+  },
+  "k0196": {
+    "label": "秋の風",
+    "reading": "秋の風",
+    "aliases": [
+      "色無き風"
+    ],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "autumn"
+  },
+  "k0197": {
+    "label": "余寒",
+    "reading": "よかん",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "時候",
+    "season": "spring"
+  },
+  "k0198": {
+    "label": "海",
+    "reading": "うみ",
+    "aliases": [],
+    "kigo": "no",
+    "type": "場所",
+    "season": ""
+  },
+  "k0199": {
+    "label": "草の香",
+    "reading": "くさのか",
+    "aliases": [],
+    "kigo": "no",
+    "type": "植物",
+    "season": "autumn"
+  },
+  "k0200": {
+    "label": "蟷螂",
+    "reading": "とうろう",
+    "aliases": [
+      "かまきり"
+    ],
+    "kigo": "yes",
+    "type": "動物",
+    "season": "summer"
+  },
+  "k0201": {
+    "label": "萩",
+    "reading": "はぎ",
+    "aliases": [
+      "萩の花"
+    ],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "autumn"
+  },
+  "k0202": {
+    "label": "帽子",
+    "reading": "ぼうし",
+    "aliases": [
+      "キャップ"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0203": {
+    "label": "夏休み",
+    "reading": "なつやすみ",
+    "aliases": [
+      "夏季休暇"
+    ],
+    "kigo": "yes",
+    "type": "時候",
+    "season": "summer"
+  },
+  "k0204": {
+    "label": "祭り",
+    "reading": "まつり",
+    "aliases": [
+      "祭",
+      "縁日"
+    ],
+    "kigo": "no",
+    "type": "生活",
+    "season": ""
+  },
+  "k0205": {
+    "label": "鬱",
+    "reading": "うつ",
+    "aliases": [],
+    "kigo": "no",
+    "type": "感情・状態",
+    "season": ""
+  },
+  "k0206": {
+    "label": "秋の虫",
+    "reading": "あきのむし",
+    "aliases": [],
+    "kigo": "no",
+    "type": "動物",
+    "season": ""
+  },
+  "k0207": {
+    "label": "蜻蛉",
+    "reading": "とんぼ",
+    "aliases": [
+      "とんぼ"
+    ],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "summer"
+  },
+  "k0208": {
+    "label": "飛行機",
+    "reading": "ひこうき",
+    "aliases": [
+      "旅客機"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0209": {
+    "label": "寒椿",
+    "reading": "かんつばき",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "winter"
+  },
+  "k0210": {
+    "label": "冬の夜",
+    "reading": "ふゆのよる",
+    "aliases": [
+      "寒夜",
+      "霜の夜"
+    ],
+    "kigo": "yes",
+    "type": "時候",
+    "season": "winter"
+  },
+  "k0211": {
+    "label": "名の花枯る",
+    "reading": "なのはなかる",
+    "aliases": [
+      "枯れ"
+    ],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "winter"
+  },
+  "k0212": {
+    "label": "冬至",
+    "reading": "とうじ",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "時候",
+    "season": "winter"
+  },
+  "k0213": {
+    "label": "すみれ",
+    "reading": "すみれ",
+    "aliases": [
+      "菫",
+      "スミレ"
+    ],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "spring"
+  },
+  "k0214": {
+    "label": "風呂",
+    "reading": "ふろ",
+    "aliases": [],
+    "kigo": "no",
+    "type": "生活",
+    "season": ""
+  },
+  "k0215": {
+    "label": "梟",
+    "reading": "ふくろう",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "動物",
+    "season": "winter"
+  },
+  "k0216": {
+    "label": "冬北斗",
+    "reading": "ふゆほくと",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "winter"
+  },
+  "k0217": {
+    "label": "一月",
+    "reading": "いちがつ",
+    "aliases": [
+      "睦月",
+      "去る睦月"
+    ],
+    "kigo": "yes",
+    "type": "時候",
+    "season": "winter"
+  },
+  "k0218": {
+    "label": "節分",
+    "reading": "節分",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "時候",
+    "season": "spring"
+  },
+  "k0219": {
+    "label": "朝まだき",
+    "reading": "あさまだき",
+    "aliases": [
+      "未明"
+    ],
+    "kigo": "no",
+    "type": "時間",
+    "season": ""
+  },
+  "k0220": {
+    "label": "息白し",
+    "reading": "いきしろし",
+    "aliases": [
+      "白き息"
+    ],
+    "kigo": "no",
+    "type": "生活",
+    "season": "winter"
+  },
+  "k0221": {
+    "label": "元日",
+    "reading": "がんじつ",
+    "aliases": [],
+    "kigo": "yes",
+    "type": "時候",
+    "season": "newyear"
+  },
+  "k0222": {
+    "label": "悲しい",
+    "reading": "かなしい",
+    "aliases": [
+      "悲し"
+    ],
+    "kigo": "no",
+    "type": "感情・状態",
+    "season": ""
+  },
+  "k0223": {
+    "label": "緑",
+    "reading": "みどり",
+    "aliases": [
+      "翠",
+      "みどり",
+      "碧"
+    ],
+    "kigo": "no",
+    "type": "感情・状態",
+    "season": ""
+  },
+  "k0224": {
+    "label": "朧月",
+    "reading": "おぼろつき",
+    "aliases": [
+      "おぼろ月",
+      "春の月"
+    ],
+    "kigo": "yes",
+    "type": "天文",
+    "season": "spring"
+  },
+  "k0225": {
+    "label": "捨",
+    "reading": "すてる",
+    "aliases": [],
+    "kigo": "no",
+    "type": "感情・状態",
+    "season": ""
+  },
+  "k0226": {
+    "label": "衣更え",
+    "reading": "ころもがえ",
+    "aliases": [
+      "更衣"
+    ],
+    "kigo": "yes",
+    "type": "時候",
+    "season": "spring"
+  },
+  "k0227": {
+    "label": "友達",
+    "reading": "ともだち",
+    "aliases": [
+      "友",
+      "朋",
+      "友人"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0228": {
+    "label": "春の朝",
+    "reading": "はるのあさ",
+    "aliases": [
+      "春暁"
+    ],
+    "kigo": "yes",
+    "type": "時候",
+    "season": "spring"
+  },
+  "k0229": {
+    "label": "ひばり",
+    "reading": "ひばり",
+    "aliases": [
+      "雲雀"
+    ],
+    "kigo": "yes",
+    "type": "植物",
+    "season": "spring"
   }
 }

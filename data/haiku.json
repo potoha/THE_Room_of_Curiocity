@@ -541,7 +541,7 @@
     "id": "h0045",
     "text": "木漏れ日を蝶飛び立つまで抱きしめり",
     "reading": "こもれびをちょうとびたつまでだきしめり",
-    "year": 2024,
+    "year": 2026,
     "season": "summer",
     "preface": "2019年のメモから推敲",
     "keywords": [
@@ -960,6 +960,1311 @@
       "k0127",
       "k0092",
       "k0128"
+    ]
+  },
+  {
+    "id": "h0079",
+    "text": "外階段越し巻雲秋は来ぬ",
+    "reading": "そとかいだんごしけんうんあきはきぬ",
+    "year": 2023,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0081",
+      "k0129",
+      "k0130"
+    ]
+  },
+  {
+    "id": "h0080",
+    "text": "石段の手摺り掴めぬほど残暑",
+    "reading": "いしだんのてすりつかめぬほどざんしょ",
+    "year": 2023,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0053",
+      "k0129"
+    ]
+  },
+  {
+    "id": "h0081",
+    "text": "橋げたのグラフィティ著し曼珠沙華",
+    "reading": "はしげたのぐらふぃてぃしるしまんじゅしゃげ",
+    "year": 2023,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0131",
+      "k0132",
+      "k0133"
+    ]
+  },
+  {
+    "id": "h0082",
+    "text": "新品の仏壇にすすき一輪",
+    "reading": "しんぴんのぶつだんにすすきいちりん",
+    "year": 2023,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0134",
+      "k0135"
+    ]
+  },
+  {
+    "id": "h0083",
+    "text": "人様のうわさ話や野分だつ",
+    "reading": "ひとさまのうわさばなしやのわきだつ",
+    "year": 2024,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0136",
+      "k0137"
+    ]
+  },
+  {
+    "id": "h0084",
+    "text": "やもりは瞬く糸杉の夜はあお",
+    "reading": "やもりはまたたくいとすぎのよるはあお",
+    "year": 2024,
+    "season": "summer",
+    "preface": "",
+    "keywords": [
+      "k0037",
+      "k0138",
+      "k0020"
+    ]
+  },
+  {
+    "id": "h0085",
+    "text": "ケータイを割りて師走の来たるかな",
+    "reading": "けーたいをわりてしわすのきたるかな",
+    "year": 2024,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0139",
+      "k0140"
+    ]
+  },
+  {
+    "id": "h0086",
+    "text": "ごきぶりと暮らす六畳紫煙消す",
+    "reading": "ごきぶりとくらすろくじょうしえんけす",
+    "year": 2024,
+    "season": "summer",
+    "preface": "",
+    "keywords": [
+      "k0127",
+      "k0101",
+      "k0092"
+    ]
+  },
+  {
+    "id": "h0087",
+    "text": "童話より童話のやうに尾花落つ",
+    "reading": "どうわよりどうわのようにおばなおつ",
+    "year": 2024,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0121",
+      "k0135"
+    ]
+  },
+  {
+    "id": "h0088",
+    "text": "旅の雨冷たし午睡果てにけり",
+    "reading": "たびのあめつめたしごすいはてにけり",
+    "year": 2024,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0112",
+      "k0141",
+      "k0142",
+      "k0143"
+    ]
+  },
+  {
+    "id": "h0089",
+    "text": "冴えわたる二十歳の帯の朱の色",
+    "reading": "さえわたるはたちのおびのあかのいろ",
+    "year": 2024,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0144",
+      "k0145",
+      "k0146"
+    ]
+  },
+  {
+    "id": "h0090",
+    "text": "冬鵙や薬指だけ長き爪",
+    "reading": "ふゆもずやくすりゆびだけながきつめ",
+    "year": 2024,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0057",
+      "k0147",
+      "k0038",
+      "k0148"
+    ]
+  },
+  {
+    "id": "h0091",
+    "text": "連ドラじゃないんだからさ緋のコート",
+    "reading": "れんどらじゃないんだからさひのこーと",
+    "year": 2024,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0144",
+      "k0149",
+      "k0150"
+    ]
+  },
+  {
+    "id": "h0092",
+    "text": "チョコザップ行ったし餅六つ喰う",
+    "reading": "ちょこざっぷいったしもちむっつくう",
+    "year": 2025,
+    "season": "newyear",
+    "preface": "",
+    "keywords": [
+      "k0151"
+    ]
+  },
+  {
+    "id": "h0093",
+    "text": "初読経椎名林檎フルアルバム",
+    "reading": "はつどきょうしいなりんごふるあるばむ",
+    "year": 2025,
+    "season": "newyear",
+    "preface": "",
+    "keywords": [
+      "k0152",
+      "k0111"
+    ]
+  },
+  {
+    "id": "h0094",
+    "text": "「久しぶり」重ねて三月は満ちて",
+    "reading": "ひさしぶりかさねてさんがつはみちて",
+    "year": 2025,
+    "season": "spring",
+    "preface": "",
+    "keywords": [
+      "k0153",
+      "k0154"
+    ]
+  },
+  {
+    "id": "h0095",
+    "text": "花の散るEPよりすこしながく",
+    "reading": "はなのちるいーぴーよりすこしながく",
+    "year": 2025,
+    "season": "spring",
+    "preface": "",
+    "keywords": [
+      "k0090",
+      "k0170"
+    ]
+  },
+  {
+    "id": "h0096",
+    "text": "来年も髪洗わずに年を越し",
+    "reading": "らいねんもかみあらわずにとしをこし",
+    "year": 2025,
+    "season": "newyear",
+    "preface": "",
+    "keywords": [
+      "k0155",
+      "k0156"
+    ]
+  },
+  {
+    "id": "h0097",
+    "text": "叔父の余命や六花にそっと触れない",
+    "reading": "おじのよみょうやりっかにそっとさわれない",
+    "year": 2025,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0157",
+      "k0158"
+    ]
+  },
+  {
+    "id": "h0098",
+    "text": "牡丹雪余命宣言受けた叔父",
+    "reading": "ぼたんゆきよめいせんげんうけたいおじ",
+    "year": 2025,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0157",
+      "k0158"
+    ]
+  },
+  {
+    "id": "h0099",
+    "text": "ガス管ののたくってをり冬日向",
+    "reading": "がすかんののたくっておりふゆひなた",
+    "year": 2025,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0148",
+      "k0159"
+    ]
+  },
+  {
+    "id": "h0100",
+    "text": "凍空や今朝の珈琲温める",
+    "reading": "いてぞらやけさのこーひーあたためる",
+    "year": 2025,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0108",
+      "k0072",
+      "k0060",
+      "k0160"
+    ]
+  },
+  {
+    "id": "h0101",
+    "text": "片時雨たまごも買ってきてたのね",
+    "reading": "かたしぐれたまごもかってきてたのね",
+    "year": 2025,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0161",
+      "k0071"
+    ]
+  },
+  {
+    "id": "h0102",
+    "text": "復学届枝まで紅い冬の梅",
+    "reading": "ふくがくとどけえだまであかいふゆのうめ",
+    "year": 2025,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0148",
+      "k0144",
+      "k0162",
+      "k0163"
+    ]
+  },
+  {
+    "id": "h0103",
+    "text": "昨日の雨踏みしめて春霞",
+    "reading": "きのうのあめふみしめてはるかすみ",
+    "year": 2025,
+    "season": "spring",
+    "preface": "",
+    "keywords": [
+      "k0066",
+      "k0142",
+      "k0164"
+    ]
+  },
+  {
+    "id": "h0104",
+    "text": "春宵のしずかスニーカーに泥",
+    "reading": "はるよいのしずかすにーかーにどろ",
+    "year": 2025,
+    "season": "spring",
+    "preface": "",
+    "keywords": [
+      "k0036",
+      "k0165",
+      "k0166",
+      "k0167"
+    ]
+  },
+  {
+    "id": "h0105",
+    "text": "くらしとは何処でもあって花霞",
+    "reading": "くらしとはどこでもあってはなかすみ",
+    "year": 2025,
+    "season": "spring",
+    "preface": "",
+    "keywords": [
+      "k0164",
+      "k0168",
+      "k0090"
+    ]
+  },
+  {
+    "id": "h0106",
+    "text": "桜前線抜き去りて窓に雪",
+    "reading": "さくらぜんせんぬきさりてまどにゆき",
+    "year": 2025,
+    "season": "spring",
+    "preface": "",
+    "keywords": [
+      "k0090",
+      "k0158"
+    ]
+  },
+  {
+    "id": "h0107",
+    "text": "花筏本屋の消えたまちに棲む",
+    "reading": "はないかだほんやのきえたまちにすむ",
+    "year": 2025,
+    "season": "spring",
+    "preface": "",
+    "keywords": [
+      "k0091",
+      "k0024",
+      "k0090",
+      "k0106"
+    ]
+  },
+  {
+    "id": "h0108",
+    "text": "花の散るプリーツスカート閃く",
+    "reading": "はなのちるプリーツスカートひらめく",
+    "year": 2025,
+    "season": "spring",
+    "preface": "",
+    "keywords": [
+      "k0090",
+      "k0169",
+      "k0170"
+    ]
+  },
+  {
+    "id": "h0109",
+    "text": "白昼夢ナガミヒナゲシの橙",
+    "reading": "はくちゅうむながみひなげしのだいだい",
+    "year": 2025,
+    "season": "spring",
+    "preface": "",
+    "keywords": [
+      "k0112",
+      "k0171",
+      "k0172"
+    ]
+  },
+  {
+    "id": "h0110",
+    "text": "凍て返る今日歯医者の予約だった",
+    "reading": "いてかえるきょうはいしゃのよやくだった",
+    "year": 2025,
+    "season": "spring",
+    "preface": "",
+    "keywords": [
+      "k0173",
+      "k0174"
+    ]
+  },
+  {
+    "id": "h0111",
+    "text": "垢抜けた彼女の睫毛花の露",
+    "reading": "あかぬけたかのじょのまつげはなのつゆ",
+    "year": 2025,
+    "season": "spring",
+    "preface": "",
+    "keywords": [
+      "k0090",
+      "k0098",
+      "k0175"
+    ]
+  },
+  {
+    "id": "h0112",
+    "text": "営みは吾を追い抜きて四月尽",
+    "reading": "いとなみはあをおいぬきてしがつじん",
+    "year": 2025,
+    "season": "spring",
+    "preface": "",
+    "keywords": [
+      "k0168",
+      "k0040",
+      "k0176"
+    ]
+  },
+  {
+    "id": "h0113",
+    "text": "終電のロングシートや落椿",
+    "reading": "しゅうでんのろんぐしーとやおちつばき",
+    "year": 2025,
+    "season": "spring",
+    "preface": "",
+    "keywords": [
+      "k0016",
+      "k0177"
+    ]
+  },
+  {
+    "id": "h0114",
+    "text": "古書堂の白百合雨止みは何時か",
+    "reading": "こしょどうのしらゆりあめやみはいつか",
+    "year": 2025,
+    "season": "summer",
+    "preface": "",
+    "keywords": [
+      "k0024",
+      "k0122",
+      "k0142"
+    ]
+  },
+  {
+    "id": "h0115",
+    "text": "あの青がなにもかも連れ去って夏",
+    "reading": "あのあおがなにもかもつれさってなつ",
+    "year": 2025,
+    "season": "summer",
+    "preface": "",
+    "keywords": [
+      "k0020",
+      "k0104"
+    ]
+  },
+  {
+    "id": "h0116",
+    "text": "風鈴を独りできいている午后や",
+    "reading": "ふうりんをひとりできいるごごや",
+    "year": 2025,
+    "season": "summer",
+    "preface": "",
+    "keywords": [
+      "k0026",
+      "k0178",
+      "k0179"
+    ]
+  },
+  {
+    "id": "h0117",
+    "text": "赤信号卒業生のスカート",
+    "reading": "あかしんごうそつぎょうせいのすかーと",
+    "year": 2025,
+    "season": "spring",
+    "preface": "",
+    "keywords": [
+      "k0169",
+      "k0181",
+      "k0180"
+    ]
+  },
+  {
+    "id": "h0118",
+    "text": "燕発って信号ぜんぶ青",
+    "reading": "つばくらめたってしんごうぜんぶあお",
+    "year": 2025,
+    "season": "summer",
+    "preface": "",
+    "keywords": [
+      "k0181",
+      "k0020",
+      "k0182"
+    ]
+  },
+  {
+    "id": "h0119",
+    "text": "アイスクリーム六畳吾で充ちる",
+    "reading": "あいすくりーむろくじょうあでみちる",
+    "year": 2025,
+    "season": "summer",
+    "preface": "",
+    "keywords": [
+      "k0002",
+      "k0040",
+      "k0092"
+    ]
+  },
+  {
+    "id": "h0120",
+    "text": "雨垂れと詩集あとアイスコーヒー",
+    "reading": "あまだれとししゅうあとあいすこーひー",
+    "year": 2025,
+    "season": "summer",
+    "preface": "",
+    "keywords": [
+      "k0108",
+      "k0084",
+      "k0142",
+      "k0024",
+      "k0002"
+    ]
+  },
+  {
+    "id": "h0121",
+    "text": "水星へとんでけたらな蝉の夜",
+    "reading": "すいせいへとんでけたらなせみのよる",
+    "year": 2025,
+    "season": "summer",
+    "preface": "",
+    "keywords": [
+      "k0037",
+      "k0183",
+      "k0184"
+    ]
+  },
+  {
+    "id": "h0122",
+    "text": "新書の背指でなぞりて蝉の夕",
+    "reading": "しんしょのせゆびでなぞりてせみのゆう",
+    "year": 2025,
+    "season": "summer",
+    "preface": "",
+    "keywords": [
+      "k0024",
+      "k0038",
+      "k0184"
+    ]
+  },
+  {
+    "id": "h0123",
+    "text": "秋は住ぬずっと真夜中でいいのに。",
+    "reading": "あきはいぬずっとまよなかでいいのに",
+    "year": 2025,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0111",
+      "k0081",
+      "k0185"
+    ]
+  },
+  {
+    "id": "h0124",
+    "text": "冬の月ひとりじゃ死ぬこともできぬ",
+    "reading": "ふゆのつきひとりじゃしぬこともできぬ",
+    "year": 2025,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0148",
+      "k0083",
+      "k0026",
+      "k0157",
+      "k0186"
+    ]
+  },
+  {
+    "id": "h0125",
+    "text": "熱帯夜だれか殺せよぼくなんか",
+    "reading": "ねったいやだれかころせよぼくなんか",
+    "year": 2025,
+    "season": "summer",
+    "preface": "",
+    "keywords": [
+      "k0187",
+      "k0040",
+      "k0157"
+    ]
+  },
+  {
+    "id": "h0126",
+    "text": "天高し知らない街を猫と行く",
+    "reading": "てんたかししらないまちをねことゆく",
+    "year": 2025,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0106",
+      "k0085",
+      "k0188"
+    ]
+  },
+  {
+    "id": "h0127",
+    "text": "天高しバス待つ靴のとりどりに",
+    "reading": "てんたかしばすますくつのとりどりに",
+    "year": 2025,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0166",
+      "k0189",
+      "k0188"
+    ]
+  },
+  {
+    "id": "h0128",
+    "text": "満月の窓に紫煙の吸い込まれ",
+    "reading": "まんげつのまどにしえんのすいこまれ",
+    "year": 2025,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0101",
+      "k0083"
+    ]
+  },
+  {
+    "id": "h0129",
+    "text": "夜長にも歓喜の歌は高くあり",
+    "reading": "よながにもかんきのうたはたかくあり",
+    "year": 2025,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0190"
+    ]
+  },
+  {
+    "id": "h0130",
+    "text": "宵闇は終わりあるから映画なり",
+    "reading": "よいやみはおわりあるからえいがなり",
+    "year": 2026,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0190",
+      "k0191"
+    ]
+  },
+  {
+    "id": "h0131",
+    "text": "万両のしなるたそがれ皆既蝕",
+    "reading": "まんりょうのしなるたそがれかいきしょく",
+    "year": 2026,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0192",
+      "k0193"
+    ]
+  },
+  {
+    "id": "h0132",
+    "text": "午の月冴えて全部はとうめいに",
+    "reading": "ひるのつきさえてぜんぶはとうめいに",
+    "year": 2025,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0083",
+      "k0186",
+      "k0194"
+    ]
+  },
+  {
+    "id": "h0133",
+    "text": "無線より早く帰りぬ秋の風",
+    "reading": "むせんよりはやくかえりぬあきのかぜ",
+    "year": 2025,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0081",
+      "k0195",
+      "k0196"
+    ]
+  },
+  {
+    "id": "h0134",
+    "text": "望月に好きと誓うは空虚かも",
+    "reading": "もちづきにすきとちかうはくうきょかも",
+    "year": 2025,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0083"
+    ]
+  },
+  {
+    "id": "h0135",
+    "text": "モノローグばかりあつめて余寒かな",
+    "reading": "ものろーぐばかりあつめてよかんかな",
+    "year": 2026,
+    "season": "spring",
+    "preface": "",
+    "keywords": [
+      "k0197"
+    ]
+  },
+  {
+    "id": "h0136",
+    "text": "朝露やいつか二人は海へ行く",
+    "reading": "あさつゆやいつかふたりはうみへいく",
+    "year": 2025,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0198",
+      "k0072",
+      "k0098"
+    ]
+  },
+  {
+    "id": "h0137",
+    "text": "草の香やひさしぶりにころんじゃった",
+    "reading": "くさのかやひさしぶりにころんじゃった",
+    "year": 2024,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0199"
+    ]
+  },
+  {
+    "id": "h0138",
+    "text": "旅の夜月下に透ける風と街",
+    "reading": "たびのよるげっかにすけるかぜとまち",
+    "year": 2025,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0143",
+      "k0037",
+      "k0195",
+      "k0106",
+      "k0083"
+    ]
+  },
+  {
+    "id": "h0139",
+    "text": "蟷螂や数Ⅱくらいのわからなさ",
+    "reading": "とうろうやすうにくらいのわからなさ",
+    "year": 2025,
+    "season": "summer",
+    "preface": "",
+    "keywords": [
+      "k0120",
+      "k0200"
+    ]
+  },
+  {
+    "id": "h0140",
+    "text": "偽物にすらなれなくて萩の花",
+    "reading": "にせものにすらなれなくてはぎのはな",
+    "year": 2025,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0201",
+      "k0090"
+    ]
+  },
+  {
+    "id": "h0141",
+    "text": "満月やめがねのつるの滑らかに",
+    "reading": "まんげつやめがねのつるのなめらかに",
+    "year": 2025,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0083",
+      "k0086"
+    ]
+  },
+  {
+    "id": "h0142",
+    "text": "積読ややがて夜長のちびていく",
+    "reading": "つんどくややがてよながのちびていく",
+    "year": 2025,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0190",
+      "k0024"
+    ]
+  },
+  {
+    "id": "h0143",
+    "text": "コーヒーを焼きて良夜のそらに風",
+    "reading": "こーひーをやきてりょうやのそらにかぜ",
+    "year": 2025,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0108",
+      "k0195",
+      "k0060",
+      "k0190"
+    ]
+  },
+  {
+    "id": "h0144",
+    "text": "張り詰める空やウールの冬帽子",
+    "reading": "はりつめるそらやうーるのふゆぼうし",
+    "year": 2025,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0060",
+      "k0148",
+      "k0202"
+    ]
+  },
+  {
+    "id": "h0145",
+    "text": "昼前に起きても一人夏休み",
+    "reading": "ひるまえにおきてもひとりなつやすみ",
+    "year": 2025,
+    "season": "summer",
+    "preface": "",
+    "keywords": [
+      "k0194",
+      "k0026",
+      "k0203"
+    ]
+  },
+  {
+    "id": "h0146",
+    "text": "縁日を二週巡りてかき氷",
+    "reading": "えんにちをにしゅうめぐりてかきごおり",
+    "year": 2025,
+    "season": "summer",
+    "preface": "",
+    "keywords": [
+      "k0204",
+      "k0002"
+    ]
+  },
+  {
+    "id": "h0147",
+    "text": "月冴える漫画全巻資源ごみ",
+    "reading": "つきさえるまんがぜんかんしげんごみ",
+    "year": 2025,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0186",
+      "k0083",
+      "k0024"
+    ]
+  },
+  {
+    "id": "h0148",
+    "text": "夏果ててもう本も読み終わったよ",
+    "reading": "なつはててほんももうよみおわったよ",
+    "year": 2025,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0024",
+      "k0128"
+    ]
+  },
+  {
+    "id": "h0149",
+    "text": "二日酔い白露のしづくすら憎し",
+    "reading": "ふつかよいはくろのしずくすらにくし",
+    "year": 2025,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0098"
+    ]
+  },
+  {
+    "id": "h0150",
+    "text": "しあわせは探すとなくて月は満つ",
+    "reading": "しあわせはさがすとなくてつきはみつ",
+    "year": 2025,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0083"
+    ]
+  },
+  {
+    "id": "h0151",
+    "text": "宵闇や心の微分鬱とする",
+    "reading": "よいやみやこころのびぶんうつとする",
+    "year": 2025,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0190",
+      "k0205"
+    ]
+  },
+  {
+    "id": "h0152",
+    "text": "帰り路の歩幅は広し秋の虫",
+    "reading": "かえりじのほはばはひろしあきのむし",
+    "year": 2025,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0081",
+      "k0206"
+    ]
+  },
+  {
+    "id": "h0153",
+    "text": "蜻蛉の高く飛行機低く飛ぶ",
+    "reading": "せいれいのたかくひこうきひくうとぶ",
+    "year": 2025,
+    "season": "summer",
+    "preface": "",
+    "keywords": [
+      "k0207",
+      "k0208"
+    ]
+  },
+  {
+    "id": "h0154",
+    "text": "自転車をつかむ冷たさ冬日向",
+    "reading": "じてんしゃをつかむつめたさふゆひなた",
+    "year": 2025,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0103",
+      "k0148",
+      "k0159"
+    ]
+  },
+  {
+    "id": "h0155",
+    "text": "寒椿ここでなにもうたわないで",
+    "reading": "かんつばきここでなにもうたわないで",
+    "year": 2025,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0209"
+    ]
+  },
+  {
+    "id": "h0156",
+    "text": "手に触れる凡ては眠る冬の夜",
+    "reading": "てにふれるすべてはねむるふゆのよる",
+    "year": 2025,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0038",
+      "k0148",
+      "k0037",
+      "k0210"
+    ]
+  },
+  {
+    "id": "h0157",
+    "text": "薔薇枯れて本は腐りも黴もせぬ",
+    "reading": "ばらかれてほんはくさりもかびもせぬ",
+    "year": 2025,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0024",
+      "k0211"
+    ]
+  },
+  {
+    "id": "h0158",
+    "text": "夏への扉に冬至の影届く",
+    "reading": "なつへのとびらにとうじのかげとどく",
+    "year": 2025,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0212"
+    ]
+  },
+  {
+    "id": "h0159",
+    "text": "水星の近くて遠しでも蜜柑",
+    "reading": "すいせいのちかくてとおしでもみかん",
+    "year": 2025,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0183",
+      "k0025"
+    ]
+  },
+  {
+    "id": "h0160",
+    "text": "すみれ草もらい煙草のメンソール",
+    "reading": "すみれそうもらいたばこのめんそーる",
+    "year": 2026,
+    "season": "spring",
+    "preface": "",
+    "keywords": [
+      "k0101",
+      "k0213"
+    ]
+  },
+  {
+    "id": "h0161",
+    "text": "琺瑯の風呂まだ熱し春隣",
+    "reading": "ほうろうのふろまだあつしはるどなり",
+    "year": 2026,
+    "season": "spring",
+    "preface": "",
+    "keywords": [
+      "k0033",
+      "k0214"
+    ]
+  },
+  {
+    "id": "h0162",
+    "text": "寒月を追いて彷徨う知らぬまち",
+    "reading": "かんげつをおいてさまようしらぬまち",
+    "year": 2025,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0186",
+      "k0106"
+    ]
+  },
+  {
+    "id": "h0163",
+    "text": "梟の聞こゆ夜にや天使来て",
+    "reading": "ふくろうのきこくよるにやてんしきて",
+    "year": 2026,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0037",
+      "k0012",
+      "k0215"
+    ]
+  },
+  {
+    "id": "h0164",
+    "text": "冬の日の低し次の駅降ります",
+    "reading": "ふゆのひのひくしつぎのえきおります",
+    "year": 2025,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0148",
+      "k0016",
+      "k0159"
+    ]
+  },
+  {
+    "id": "h0165",
+    "text": "霧深し微笑う天使のなにもせぬ",
+    "reading": "きりふかしわらうてんしのなにもせぬ",
+    "year": 2025,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0079",
+      "k0012"
+    ]
+  },
+  {
+    "id": "h0166",
+    "text": "霜の夜きつと天使はここにをり",
+    "reading": "しものよるきっとてんしはここにおり",
+    "year": 2025,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0037",
+      "k0012",
+      "k0210"
+    ]
+  },
+  {
+    "id": "h0167",
+    "text": "AIも僕も嘘吐き秋霞",
+    "reading": "えーあいもぼくもうそつきあきかすみ",
+    "year": 2025,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0081",
+      "k0164",
+      "k0040"
+    ]
+  },
+  {
+    "id": "h0168",
+    "text": "飛び降りて抱き留めたるは冬北斗",
+    "reading": "とびおりてだきとめたるはふゆほくと",
+    "year": 2025,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0148",
+      "k0216"
+    ]
+  },
+  {
+    "id": "h0169",
+    "text": "「また、」と云う手の冷たさや去る睦月",
+    "reading": "またというてのつめたさやさるむつき",
+    "year": 2025,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0038",
+      "k0141",
+      "k0217"
+    ]
+  },
+  {
+    "id": "h0170",
+    "text": "海鮮丼黙食せり節分",
+    "reading": "かいせんどんもくしょくせりせつぶん",
+    "year": 2026,
+    "season": "spring",
+    "preface": "",
+    "keywords": [
+      "k0218"
+    ]
+  },
+  {
+    "id": "h0171",
+    "text": "コーヒーのすぐ冷めたるや月冴ゆる",
+    "reading": "こーひーのすぐさめたるやつきさゆる",
+    "year": 2026,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0108",
+      "k0083",
+      "k0186"
+    ]
+  },
+  {
+    "id": "h0172",
+    "text": "朝まだき鈍行をまつ息白し",
+    "reading": "あさまだきどんこうをまついきしろし",
+    "year": 2026,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0219",
+      "k0220",
+      "k0016"
+    ]
+  },
+  {
+    "id": "h0173",
+    "text": "カステラを焼く元日の居間はしずか",
+    "reading": "かすてらをやくがんじつのいまはしずか",
+    "year": 2026,
+    "season": "newyear",
+    "preface": "",
+    "keywords": [
+      "k0165",
+      "k0221"
+    ]
+  },
+  {
+    "id": "h0174",
+    "text": "黄か朱かゴッホの見ゆる初日の出",
+    "reading": "きかあかかごっほのみゆるはつひので",
+    "year": 2026,
+    "season": "newyear",
+    "preface": "",
+    "keywords": [
+      "k0144"
+    ]
+  },
+  {
+    "id": "h0175",
+    "text": "牛丼のあたたかさ知る秋の風",
+    "reading": "ぎゅうどんのあたたかさしるあきのかぜ",
+    "year": 2025,
+    "season": "autumn",
+    "preface": "",
+    "keywords": [
+      "k0081",
+      "k0195",
+      "k0196"
+    ]
+  },
+  {
+    "id": "h0176",
+    "text": "冬の夜全部が悲しくて冷たい",
+    "reading": "ふゆのよるぜんぶがかなしくてつめたい",
+    "year": 2025,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0148",
+      "k0037",
+      "k0222",
+      "k0141"
+    ]
+  },
+  {
+    "id": "h0177",
+    "text": "緑赤工事現場に聖夜あり",
+    "reading": "みどりあかこうじげんばにせいやあり",
+    "year": 2025,
+    "season": "winter",
+    "preface": "",
+    "keywords": [
+      "k0144",
+      "k0005",
+      "k0223"
+    ]
+  },
+  {
+    "id": "h0178",
+    "text": "おぼろ月少し小さし雨のあと",
+    "reading": "おぼろつきすこしちいさしあめのあと",
+    "year": 2026,
+    "season": "spring",
+    "preface": "",
+    "keywords": [
+      "k0142",
+      "k0224"
+    ]
+  },
+  {
+    "id": "h0179",
+    "text": "うつくしい小石を捨つる衣更え",
+    "reading": "うつくしいこいしをすつるころもがえ",
+    "year": 2026,
+    "season": "spring",
+    "preface": "",
+    "keywords": [
+      "k0225",
+      "k0226"
+    ]
+  },
+  {
+    "id": "h0180",
+    "text": "春闇をかき分ける画面越しに友",
+    "reading": "はるやみをかきわけるがめんごしにとも",
+    "year": 2026,
+    "season": "spring",
+    "preface": "",
+    "keywords": [
+      "k0033",
+      "k0037",
+      "k0139",
+      "k0227"
+    ]
+  },
+  {
+    "id": "h0181",
+    "text": "春暁やなごり遺して発つ天使",
+    "reading": "しゅんぎょうやなごりのこしてたつてんし",
+    "year": 2026,
+    "season": "spring",
+    "preface": "",
+    "keywords": [
+      "k0012",
+      "k0228"
+    ]
+  },
+  {
+    "id": "h0182",
+    "text": "初ひばり天使の去りきなごりかな",
+    "reading": "はつひばりてんしのさりきなごりかな",
+    "year": 2026,
+    "season": "spring",
+    "preface": "",
+    "keywords": [
+      "k0012",
+      "k0229"
     ]
   }
 ]

@@ -84,7 +84,35 @@
             <p>星々を繋いでいます...</p>
         </div>
 
+        <!-- Haiku List Overlay -->
+        <div id="haiku-list-overlay" class="overlay hidden">
+            <div class="list-container">
+                <div class="list-header">
+                    <h2>すべての俳句</h2>
+                    <div class="list-controls">
+                        <label for="sort-select">並べ替え:</label>
+                        <select id="sort-select" class="dropdown">
+                            <option value="newest">新しい順</option>
+                            <option value="season">季節ごと</option>
+                            <option value="random">ランダム</option>
+                        </select>
+                        <button id="close-list-btn" class="close-list-btn" aria-label="Close List">← 戻る</button>
+                    </div>
+                </div>
+                <!-- Vertical, right-to-left layout for the list -->
+                <div class="haiku-vertical-list" id="haiku-vertical-list">
+                    <!-- Javascript will populate vertical haikus here -->
+                </div>
+            </div>
+        </div>
+
     </div>
+
+    <!-- Floating Action Button -->
+    <button id="show-list-btn" class="fab-list-btn" title="すべての俳句を見る">
+        <span class="fab-icon">☰</span>
+        <span class="fab-label">一覧</span>
+    </button>
 
     <!-- フッター -->
     <footer>

@@ -13,6 +13,7 @@
     --font-serif: 'Noto Serif JP', serif;
     --font-sans: 'Zen Kaku Gothic New', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --haiku-column-gap: 2rem;
 }
 
 * {
@@ -174,9 +175,11 @@ a:hover {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 3rem;
+    gap: var(--haiku-column-gap);
     padding: 2rem 0;
     min-height: 40vh;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .haiku-note {
@@ -187,7 +190,8 @@ a:hover {
     line-height: 1.8;
     color: var(--text-secondary);
     padding-top: 2rem; /* inset it naturally based on standard Japanese formatting */
-    margin-right: -1rem; /* Pull it slightly closer to the main text */
+    margin-right: 0;
+    max-height: 100%;
 }
 
 .haiku-year {
@@ -217,7 +221,9 @@ a:hover {
     line-height: 2.5;
     letter-spacing: 0.2em;
     color: var(--text-primary);
-    white-space: nowrap;
+    white-space: pre-wrap;
+    word-break: keep-all;
+    flex-shrink: 0;
 }
 
 .small-text {
@@ -312,7 +318,7 @@ h3 {
 
 .overlay.hidden {
     opacity: 0;
-    pointer-events: none;
+    pointer-events: none !important;
 }
 
 .overlay p {
@@ -491,4 +497,259 @@ footer {
     font-size: 0.8rem;
     letter-spacing: 0.05em;
     z-index: 1000;
+}
+
+/* --- Haiku List View --- */
+#haiku-list-overlay {
+    z-index: 2000;
+    pointer-events: auto; /* Critical: override ui-layer's pointer-events:none */
+    background: rgba(15, 18, 25, 0.97);
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-container {
+    width: 92%;
+    height: 85%;
+    background: var(--glass-bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    animation: fadeIn 0.5s ease;
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--panel-border);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+}
+
+.list-header h2 {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    color: var(--accent-gold);
+}
+
+.list-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-secondary);
+}
+
+.dropdown {
+    background: rgba(42, 66, 102, 0.6);
+    border: 1px solid var(--panel-border);
+    color: var(--text-primary);
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    cursor: pointer;
+    outline: none;
+    -webkit-appearance: auto;
+    appearance: auto;
+}
+
+.dropdown:focus {
+    border-color: var(--accent-gold);
+}
+
+.close-list-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--panel-border);
+    color: var(--text-secondary);
+    padding: 0.45rem 1rem;
+    border-radius: 6px;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+.close-list-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--text-primary);
+    border-color: var(--accent-gold);
+}
+
+.haiku-vertical-list {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    direction: rtl; /* Natural right-to-left flow and scroll alignment */
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 4rem;
+    padding: 1rem 2rem;
+    align-items: flex-start;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-gold) rgba(0,0,0,0.2);
+}
+
+.haiku-vertical-list::-webkit-scrollbar {
+    height: 8px;
+}
+.haiku-vertical-list::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.2);
+    border-radius: 4px;
+}
+.haiku-vertical-list::-webkit-scrollbar-thumb {
+    background-color: var(--accent-gold);
+    border-radius: 4px;
+}
+
+.list-haiku-item {
+    direction: ltr; /* Reset text direction for inner contents */
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+    flex-shrink: 0;
+}
+
+.list-haiku-item:hover {
+    transform: translateY(-4px);
+}
+
+.list-haiku-item .vertical-text {
+    font-size: 1.4rem;
+    line-height: 2;
+}
+
+.list-haiku-item:hover .vertical-text {
+    color: #fff;
+    text-shadow: 0 0 10px var(--accent-glow);
+}
+
+.list-haiku-meta {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 0.85rem;
+    color: var(--accent-gold);
+    margin-right: 1rem;
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* --- Floating Action Button (FAB) --- */
+.fab-list-btn {
+    position: fixed;
+    bottom: 3.5rem;
+    right: 2rem;
+    z-index: 1500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(42, 66, 102, 0.9);
+    border: 1px solid var(--accent-gold);
+    color: var(--accent-gold);
+    padding: 0.7rem 1.2rem;
+    border-radius: 30px;
+    font-family: var(--font-serif);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+}
+.fab-list-btn:hover {
+    background: var(--accent-glow);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    transform: translateY(-2px);
+}
+.fab-icon {
+    font-size: 1.1rem;
+}
+.fab-label {
+    letter-spacing: 2px;
+}
+
+/* --- Responsive: Portrait (smartphone) --- */
+@media (orientation: portrait) {
+    .list-container {
+        width: 96%;
+        height: 90%;
+        padding: 1rem;
+    }
+    .list-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+    .list-header h2 {
+        font-size: 1.3rem;
+    }
+    .haiku-vertical-list {
+        flex-direction: row;
+        direction: rtl; /* Keep RTL since it's still a horizontal list */
+        overflow-x: auto;
+        overflow-y: hidden;
+        gap: 2.2rem;
+        align-items: flex-start;
+        scrollbar-width: thin;
+        scrollbar-color: var(--accent-gold) rgba(0,0,0,0.2);
+    }
+    .haiku-vertical-list::-webkit-scrollbar {
+        width: auto;
+        height: 6px;
+    }
+    .list-haiku-item {
+        justify-content: flex-start;
+    }
+    .list-haiku-item .vertical-text {
+        font-size: 1.2rem;
+        line-height: 1.8;
+    }
+    .fab-list-btn {
+        bottom: 3rem;
+        right: 1rem;
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+    }
+    #detail-panel {
+        padding: 2.2rem 1.2rem 1.2rem;
+    }
+    .haiku-header {
+        min-height: 34vh;
+        gap: max(1rem, var(--haiku-column-gap));
+    }
+    .haiku-container .vertical-text {
+        font-size: 1.45rem;
+        line-height: 2.2;
+    }
+    .haiku-year,
+    .haiku-note {
+        font-size: 0.9rem;
+    }
+}
+
+/* --- Responsive: Landscape (desktop/tablet) --- */
+@media (orientation: landscape) and (max-height: 500px) {
+    .list-container {
+        height: 92%;
+        padding: 1rem 1.5rem;
+    }
+    .list-header h2 {
+        font-size: 1.2rem;
+    }
+    .haiku-vertical-list {
+        gap: 3rem;
+    }
+    .list-haiku-item .vertical-text {
+        font-size: 1.1rem;
+    }
 }

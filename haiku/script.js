@@ -22,6 +22,13 @@ const startHaikuYear = document.getElementById('start-haiku-year');
 const startRandomBtn = document.getElementById('start-random-btn');
 const startEnterBtn = document.getElementById('start-enter-btn');
 
+// List Overlay Elements
+const showListBtn = document.getElementById('show-list-btn');
+const haikuListOverlay = document.getElementById('haiku-list-overlay');
+const closeListBtn = document.getElementById('close-list-btn');
+const sortSelect = document.getElementById('sort-select');
+const haikuVerticalList = document.getElementById('haiku-vertical-list');
+
 // State
 let haikus = [];
 let keywords = [];
@@ -30,6 +37,8 @@ let nodesDataSet = null;
 let edgesDataSet = null;
 let historyLog = []; // { type: 'haiku' | 'keyword', id: string, name: string }
 let currentStartHaiku = null;
+let listTouchStartY = 0;
+let listTouchStartScrollLeft = 0;
 
 // Initialization
 async function init() {
@@ -44,6 +53,7 @@ async function init() {
         keywords = await keywordRes.json();
         
         setupStartScreen();
+        setupHaikuList();
         buildNetwork();
     } catch (error) {
         console.error("Failed to load data:", error);
@@ -346,6 +356,7 @@ function showHaiku(id) {
         haikuNoteEl.textContent = '';
         haikuNoteEl.style.display = 'none';
     }
+    adjustHaikuDetailSpacing(haiku.text, noteContent || '');
 
     // Process keyword links
     setTimeout(() => {
@@ -380,6 +391,14 @@ function showHaiku(id) {
     haikuView.classList.remove('hidden');
     keywordView.classList.add('hidden');
     detailPanel.classList.remove('hidden');
+}
+
+function adjustHaikuDetailSpacing(haikuText, noteText) {
+    const plainHaikuLength = (haikuText || '').replace(/\s/g, '').length;
+    const plainNoteLength = (noteText || '').replace(/\s/g, '').length;
+    const extraGap = Math.min(1.8, (plainHaikuLength * 0.02) + (plainNoteLength * 0.015));
+    const dynamicGap = Math.max(1.4, 1.8 + extraGap);
+    detailPanel.style.setProperty('--haiku-column-gap', `${dynamicGap}rem`);
 }
 
 function showKeyword(kw) {
@@ -442,6 +461,106 @@ function renderBreadcrumbs() {
 
         li.appendChild(a);
         breadcrumbList.appendChild(li);
+    });
+}
+
+// --- Haiku List View Logic ---
+function openListView() {
+    renderHaikuList(sortSelect.value || 'newest');
+    haikuListOverlay.classList.remove('hidden');
+    showListBtn.style.display = 'none';
+    toggleUniverseInteraction(false);
+}
+
+function closeListView() {
+    haikuListOverlay.classList.add('hidden');
+    showListBtn.style.display = 'flex';
+    toggleUniverseInteraction(true);
+}
+
+function toggleUniverseInteraction(enabled) {
+    if (!network) return;
+    network.setOptions({
+        interaction: {
+            dragView: enabled,
+            zoomView: enabled,
+            dragNodes: enabled,
+            hover: enabled
+        }
+    });
+}
+
+function setupHaikuList() {
+    showListBtn.addEventListener('click', openListView);
+
+    closeListBtn.addEventListener('click', closeListView);
+
+    sortSelect.addEventListener('change', (e) => {
+        renderHaikuList(e.target.value);
+    });
+
+    // Close on background click
+    haikuListOverlay.addEventListener('click', (e) => {
+        if (e.target === haikuListOverlay) {
+            closeListView();
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !haikuListOverlay.classList.contains('hidden')) {
+            closeListView();
+        }
+    });
+
+    // Convert vertical mouse wheel to horizontal movement (forward moves left in RTL)
+    haikuVerticalList.addEventListener('wheel', (e) => {
+        if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+        e.preventDefault();
+        // In modern browsers, scrollBy with a negative left value pans leftward
+        haikuVerticalList.scrollBy({ left: -e.deltaY });
+    }, { passive: false });
+
+    // Touch events for vertical-to-horizontal translation are removed.
+    // Native horizontal swiping works perfectly and intuitively for RTL horizontal lists on mobile touchscreens.
+}
+
+function renderHaikuList(sortBy) {
+    haikuVerticalList.innerHTML = '';
+    
+    let sortedHaikus = [...haikus];
+
+    if (sortBy === 'newest') {
+        sortedHaikus.sort((a, b) => b.year - a.year);
+    } else if (sortBy === 'season') {
+        const seasonOrder = { 'spring': 1, 'summer': 2, 'autumn': 3, 'winter': 4, 'newyear': 5, '': 6 };
+        sortedHaikus.sort((a, b) => (seasonOrder[a.season] || 6) - (seasonOrder[b.season] || 6));
+    } else if (sortBy === 'random') {
+        sortedHaikus.sort(() => Math.random() - 0.5);
+    }
+
+    sortedHaikus.forEach(h => {
+        const item = document.createElement('div');
+        item.className = 'list-haiku-item';
+        
+        const seasonDict = { 'spring': '春', 'summer': '夏', 'autumn': '秋', 'winter': '冬', 'newyear': '新年' };
+        const seasonText = seasonDict[h.season] || '無季';
+
+        item.innerHTML = `
+            <div class="vertical-text">${h.text}</div>
+            <div class="list-haiku-meta">
+                <span>${h.year}年</span>
+                <span>${seasonText}</span>
+            </div>
+        `;
+
+        item.addEventListener('click', () => {
+            closeListView();
+            startScreen.classList.add('hidden');
+            handleNodeClick(`h_${h.id}`);
+        });
+
+        haikuVerticalList.appendChild(item);
     });
 }
 
