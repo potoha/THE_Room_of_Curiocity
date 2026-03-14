@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Editor | コンテンツ管理エディタ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>コンテンツ管理エディタ</h1>
+            <p>MDファイルからコンテンツを登録し、キーワードと紐付けて content.json を生成します。</p>
+            
+            <div class="import-section">
+                <h3>既存データのインポート</h3>
+                <div class="import-controls">
+                    <div>
+                        <label for="import-content">content.json:</label>
+                        <input type="file" id="import-content" accept=".json">
+                    </div>
+                    <div>
+                        <label for="import-keywords">keywords.json:</label>
+                        <input type="file" id="import-keywords" accept=".json">
+                    </div>
+                </div>
+            </div>
+            <div class="download-actions" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                <button id="download-content" class="btn-success">content.jsonを保存・生成</button>
+                <button id="download-keywords" class="btn-success">keywords.jsonを保存・生成</button>
+            </div>
+
+            <div class="import-section" style="margin-top: 1rem;">
+                <h3>コンテンツフォルダのスキャン</h3>
+                <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <input type="file" id="scan-directory" webkitdirectory directory multiple>
+                    <button type="button" id="scan-btn" class="btn-primary">未登録ファイルを検出</button>
+                </div>
+                <small>MDコンテンツが格納されているルートフォルダ（01-fragment等を含む階層）を選択してください。</small>
+            </div>
+        </header>
+
+        <main>
+            <!-- メイン入力フォーム -->
+            <form id="content-form">
+                <h2 id="form-title" style="margin-bottom: 1rem; font-size: 1.2rem; color: var(--accent-blue);">新規コンテンツ登録</h2>
+                <input type="hidden" id="editing-content-id">
+
+                <!-- MDファイル読込 -->
+                <div class="form-group">
+                    <label for="md-file-input">MDファイルを読み込む</label>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <input type="file" id="md-file-input" accept=".md,.txt">
+                        <button type="button" id="extract-btn" class="btn-primary">読込＆キーワード抽出</button>
+                    </div>
+                    <small>MDファイルの [[wikilinks]] と YAML frontmatter の topics からキーワード候補を自動抽出します。</small>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group flex-2">
+                        <label for="content-title">タイトル</label>
+                        <input type="text" id="content-title" placeholder="コンテンツのタイトル" required>
+                    </div>
+                    <div class="form-group flex-1">
+                        <label for="content-type">カテゴリ</label>
+                        <select id="content-type" required>
+                            <option value="">選択してください</option>
+                            <option value="fragment">断片 (Fragment)</option>
+                            <option value="essay">論考 (Essay)</option>
+                            <option value="project-note">企画ノート (Project Note)</option>
+                            <option value="work">作品 (Work)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group flex-1">
+                        <label for="content-slug">Slug (URL識別子)</label>
+                        <input type="text" id="content-slug" placeholder="weak-angel" required>
+                        <small>URLに使用されます（例: weak-angel）</small>
+                    </div>
+                    <div class="form-group flex-1">
+                        <label for="content-file">ファイル名</label>
+                        <input type="text" id="content-file" placeholder="01-fragment/弱い天使.md" required>
+                        <small>data/MD_contents_master/ からの相対パス</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="content-description">説明</label>
+                    <textarea id="content-description" rows="2" placeholder="（任意）コンテンツの概要..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="content-url">URL（外部リンク）</label>
+                    <input type="text" id="content-url" placeholder="https://example.com/...（任意）">
+                </div>
+
+                <!-- MDプレビュー -->
+                <div class="form-group md-preview-section" id="md-preview-section" style="display: none;">
+                    <label>MDプレビュー <small style="display:inline; font-weight: normal;">(先頭500文字)</small></label>
+                    <div id="md-preview" class="md-preview"></div>
+                </div>
+
+                <!-- キーワード選択エリア -->
+                <div class="form-group keyword-section" id="keyword-section" style="display: none;">
+                    <label>抽出されたキーワード候補</label>
+                    <p class="help-text">チェックを入れた単語がこのコンテンツのキーワードとして登録されます。未登録の場合は新規作成用フォームが開きます。</p>
+                    <div id="parsed-keywords" class="checkbox-group">
+                        <!-- JSによって動的にチェックボックスが追加される -->
+                    </div>
+
+                    <!-- 手動追加 -->
+                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                        <label>手動キーワード追加</label>
+                        <div style="display: flex; gap: 0.5rem; align-items: center;">
+                            <input type="text" id="manual-keyword-input" placeholder="候補に出なかった語を追加">
+                            <button type="button" id="manual-keyword-btn" class="btn-secondary">追加</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions" style="display: flex; gap: 1rem; align-items: center;">
+                    <button type="submit" id="save-btn" class="btn-success disabled" disabled>リストに保存</button>
+                    <button type="button" id="cancel-edit-btn" class="btn-secondary hidden">編集をキャンセル</button>
+                </div>
+            </form>
+
+            <section class="export-section" id="new-files-section" style="display: none; border: 2px solid var(--accent-blue); padding: 1rem; border-radius: 8px; margin-bottom: 2rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h2 style="color: var(--accent-blue);">未登録のMDファイル (<span id="new-files-count">0</span>件)</h2>
+                    <button type="button" id="hide-scan-results" class="btn-secondary btn-sm">閉じる</button>
+                </div>
+                <p class="help-text">content.json に登録されていないファイルが見つかりました。「編集」を押すとフォームに読み込まれます。</p>
+                <div id="new-files-list" class="haiku-list-container">
+                    <!-- JSによって動的に追加される -->
+                </div>
+            </section>
+
+            <section class="export-section">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h2>登録済みコンテンツ一覧 (<span id="total-count">0</span>件)</h2>
+                    <input type="text" id="search-content" placeholder="コンテンツを検索..." style="width: 250px; padding: 0.5rem;">
+                </div>
+                <div id="content-list" class="haiku-list-container">
+                    <p class="empty-state">データがありません。インポートするか新規登録してください。</p>
+                </div>
+            </section>
+
+            <section class="export-section" style="margin-top: 2rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h2>登録済みキーワード一覧 (<span id="total-kw-count">0</span>件)</h2>
+                    <input type="text" id="search-keyword" placeholder="キーワードを検索..." style="width: 250px; padding: 0.5rem;">
+                </div>
+                <div id="keyword-list" class="haiku-list-container">
+                    <p class="empty-state">データがありません。インポートするか新規抽出してください。</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 新規キーワード登録モーダル -->
+    <div id="new-keyword-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3 id="kw-modal-title">新規キーワード登録</h3>
+            <p>キーワードの情報を入力・編集してください。</p>
+            <form id="new-keyword-form">
+                <input type="hidden" id="editing-kw-id">
+                <div class="form-group">
+                    <label>正規表記 (Label)</label>
+                    <input type="text" id="new-kw-label" required>
+                </div>
+                <div class="form-group">
+                    <label>読み (Reading)</label>
+                    <input type="text" id="new-kw-reading" required>
+                </div>
+                <div class="form-group">
+                    <label>表記揺れ (Aliases) - カンマ区切り</label>
+                    <input type="text" id="new-kw-aliases" placeholder="例: 桜桃,さくらんぼ">
+                </div>
+                <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem;">
+                    <input type="checkbox" id="new-kw-kigo" style="width: auto;">
+                    <label for="new-kw-kigo" style="margin-bottom: 0;">季語である (Kigo)</label>
+                </div>
+                <div class="form-row">
+                    <div class="form-group flex-1">
+                        <label>分類 (Type)</label>
+                        <select id="new-kw-type" required>
+                            <option value="場所">場所</option>
+                            <option value="物">物</option>
+                            <option value="身体">身体</option>
+                            <option value="感情・状態">感情・状態</option>
+                            <option value="時間">時間</option>
+                            <option value="時候">時候</option>
+                            <option value="天文">天文</option>
+                            <option value="地理">地理</option>
+                            <option value="生活">生活</option>
+                            <option value="行事">行事</option>
+                            <option value="動物">動物</option>
+                            <option value="植物">植物</option>
+                        </select>
+                    </div>
+                    <div class="form-group flex-1">
+                        <label>季節 (Season) - 季語の場合</label>
+                        <select id="new-kw-season">
+                            <option value="">なし</option>
+                            <option value="spring">春 (spring)</option>
+                            <option value="summer">夏 (summer)</option>
+                            <option value="autumn">秋 (autumn)</option>
+                            <option value="winter">冬 (winter)</option>
+                            <option value="newyear">新年 (newyear)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-actions" style="justify-content: flex-end; gap: 1rem; margin-top: 1.5rem;">
+                    <button type="button" id="cancel-kw-btn" class="btn-secondary">キャンセル</button>
+                    <button type="submit" class="btn-primary">登録して選択</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="editor.js"></script>
+</body>
+</html>

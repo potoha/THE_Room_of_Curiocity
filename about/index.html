@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>十六月書房 -しがつのへや-| Room of Curiocity</title>
+    <!-- プレミアムなデザインのためのフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Entrance Overlay -->
+    <div id="entrance-overlay" class="entrance-overlay">
+        <div class="entrance-content glass-panel text-center">
+            <h2>十六月書房へようこそ！</h2>
+            <p>このサイトではBGMが流れます</p>
+            <div class="entrance-buttons mt-4">
+                <button id="btn-enter" class="entrance-btn">Enter</button>
+                <button id="btn-enter-muted" class="entrance-btn outline">音楽をミュートしてEnter</button>
+            </div>
+        </div>
+    </div>
+    <header class="navbar">
+        <a href="../index.html" class="nav-brand">十六月書房</a>
+        <div class="nav-right" style="display: flex; align-items: center;">
+            <nav class="nav-links">
+                <a href="../index.html">俳句宇宙</a>
+                <a href="#about">私について</a>
+                <a href="../bookshelf/index.html">本棚</a>
+                <a href="../zine-viewer/index.html">ZINE</a>
+                <a href="#contact">リンク</a>
+            </nav>
+            <div class="bgm-controls" id="bgm-controls">
+                <button id="restart-btn" class="bgm-icon-btn" aria-label="Restart Music" title="最初から再生">⏮️</button>
+                <div class="volume-slider-container">
+                    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.3" class="volume-slider" title="音量">
+                </div>
+                <button id="mute-btn" class="bgm-icon-btn" aria-label="Toggle Music" title="BGM ON/OFF">
+                    🔊
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">十六月書房</h1>
+            <p class="hero-subtitle">- しがつのへや -</p>
+            <p class="hero-author">Charlotte:詩抄-POLANOID</p>
+            <p class="hero-desc">Room of Curiocity</p>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- 私について (About) -->
+    <section class="about section" id="about">
+        <div class="container">
+            <h2 class="section-title">私について<span>About Me</span></h2>
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="../assets/profile.jpg" alt="Profile of Charlotte:詩抄-POLANOID">
+                    <div class="glass-panel text-center">
+                        <h3>Charlotte:詩抄-POLANOID</h3>
+                        <p class="role">詩抄 / ポラノイド</p>
+                    </div>
+                </div>
+                <div class="about-text glass-panel" ondblclick="window.open('https://note.com/shihow_of_po/n/ne336bfbde414', '_blank')" title="ダブルクリックで自己紹介記事へ" style="cursor: pointer;">
+                    <h3>Charlotte:詩抄-POLANOID                    </h3>
+                    <p>
+                        この長く奇妙な名前には、3つの意味が込められています。<br><br>
+                        <strong>Charlotte（シャーロット）――お菓子の魔女ー 永遠の渇望</strong><br>
+                        魔法少女まどか☆マギカより。無限にお菓子を生み出せるのに、一番欲している「チーズ」だけは作れない。その永遠の渇望。<br><br>
+                        <strong>詩抄（ししょう）―― 言葉の採集者</strong><br>
+                        日々溢れる膨大な言葉の海から、自分に響くものだけを掬い上げ、並べる。<br><br>
+                        <strong>PORANOID（ポラノイド）―― 瞬間を記録する機体</strong><br>
+                        Polaroid（インスタントカメラ） × Humanoid（人間）。瞬間を切り取ることを志向する人間。
+                    </p>
+                    <hr>
+                    <h3>歩み</h3>
+                    <p>
+                        岡山県生まれ<br>
+                        高校時代から本格的に創作活動をはじめる。<br>
+                        コロナパンデミックの最中美術大学に入学するも周囲の才能にもまれて挫折。 <br>
+                        現在は日本文学を学ぶ。<br>
+                        <br>
+                        「日常の中にあるはずのナニカを偏執的に希求してそれをどうにか言語化しようとするモノ」<br>
+                        それが私です。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="coffee-story glass-panel mt-4">
+                <h3>このサイトについて</h3>
+                <p>
+                    このサイトは、Charlotte:詩抄-POLANOIDの創作をアーカイブしキュレーションするポートフォリオサイトです。<br>
+                    
+                    <br>
+                    <strong>十六月書房ーしがつのへやー　について</strong>
+                    <p>十六月とは、前の年度の四月から数えて、十六番目の月。<br>
+                        手元には、終わらせられずずるずると続いてしまったものたちが溢れている。それなのに、世間はそんな私だけを置いて、新しい年度、二度目の「四月」へと足早に変わっていく。<br>
+                        ここは、そんな「十六月」の部屋に取り残された私が、言葉の海から掬い上げた詩や小説、ZINEなどの記録を蒐集し、展示するための個人的な書斎であり保管庫。そして個人サークルの名称でもあります。</p>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品 (Works) -->
+    <section class="works section" id="works">
+        <div class="container">
+            <h2 class="section-title">作品<span>Works</span></h2>
+            <div class="works-grid">
+                <!-- 俳句 -->
+                <a href="../index.html" class="work-card" style="display: block;">
+                    <div class="work-img">
+                        <img src="../assets/haiku1.png" alt="俳句">
+                        <div class="work-overlay">
+                            <span>Haiku</span>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <h3>俳句</h3>
+                        <p>概念のネットワークを辿り、思考の迷路を探索する。俳句宇宙へ。</p>
+                    </div>
+                </a>
+
+                <!-- 本棚 -->
+                <a href="../bookshelf/index.html" class="work-card" style="display: block;">
+                    <div class="work-img">
+                        <img src="../assets/bg.jpg" alt="本棚">
+                        <div class="work-overlay">
+                            <span>Bookshelf</span>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <h3>本棚</h3>
+                        <p>読んだ本の記録と感想。私の本棚を覗いてみてください。</p>
+                    </div>
+                </a>
+
+                <!-- 出版 -->
+                <a href="../zine-viewer/index.html" class="work-card" style="display: block;">
+                    <div class="work-img">
+                        <img src="../assets/EP.png" alt="出版物・ZINE">
+                        <div class="work-overlay">
+                            <span>Publishing / ZINE</span>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <h3>出版・ZINE</h3>
+                        <p>毎月の俳句ZINE『おりおり』など、個人出版物のアーカイブ。</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- リンク (Contact / Social) -->
+    <section class="contact section" id="contact">
+        <div class="container text-center">
+            <h2 class="section-title">リンク<span>Connections</span></h2>
+            <p>作品や日常の記録、お知らせなどはこちらから。</p>
+            <div class="social-links">
+                <a href="https://note.com/shihow_of_po" target="_blank" class="social-btn glass-panel">
+                    <span class="icon">📝</span>
+                    note
+                </a>
+                <a href="https://x.com/Shishow_of_PO" target="_blank" class="social-btn glass-panel">
+                    <span class="icon">🐦</span>
+                    Twitter (現X)
+                </a>
+                <a href="https://discord.com/invite/smppdqkTEu" target="_blank" class="social-btn glass-panel">
+                    <span class="icon">💬</span>
+                    Discord 鯖
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <p><a href="https://nekohacker.com" target="_blank" class="footer-music-credit">music by Neko Hacker feat. KMNZ Liz : home sweet home</a></p>
+        <p>&copy; 2026 Charlotte:詩抄-POLANOID (十六月書房). All Rights Reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

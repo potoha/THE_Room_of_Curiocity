@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contents Viewer | 十六月書房</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it@14.1.0/dist/markdown-it.min.js"></script>
+    
+    <link rel="stylesheet" href="../about/style.css"> <!-- Reuse global styles -->
+    <link rel="stylesheet" href="style.css"> <!-- Viewer specific styles -->
+</head>
+<body class="reader-mode">
+    <header class="navbar">
+        <a href="../index.html" class="nav-brand">十六月書房</a>
+        <div class="nav-right" style="display: flex; align-items: center;">
+            <nav class="nav-links">
+                <a href="../index.html">俳句宇宙</a>
+                <a href="../about/index.html">私について</a>
+                <a href="../bookshelf/index.html">本棚</a>
+                <a href="../zine-viewer/index.html">ZINE</a>
+                <a href="../about/index.html#contact">リンク</a>
+            </nav>
+            <div class="reader-tools">
+                <button id="reader-settings-btn" class="icon-btn" title="表示設定">⚙️</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="viewer-container">
+        <!-- Reader Settings Panel -->
+        <div id="settings-panel" class="settings-panel glass-panel hidden">
+            <div class="settings-header">
+                <h3>表示設定</h3>
+                <button id="close-settings" class="close-btn">&times;</button>
+            </div>
+            <div class="settings-group">
+                <label>テーマ</label>
+                <div class="theme-options">
+                    <button data-theme="light" class="theme-btn light active">明</button>
+                    <button data-theme="sepia" class="theme-btn sepia">栞</button>
+                    <button data-theme="dark" class="theme-btn dark">暗</button>
+                </div>
+            </div>
+            <div class="settings-group">
+                <label>フォント</label>
+                <div class="font-options">
+                    <button data-font="serif" class="font-btn active">明朝</button>
+                    <button data-font="sans" class="font-btn">ゴシック</button>
+                </div>
+            </div>
+            <div class="settings-group">
+                <label>文字サイズ</label>
+                <div class="range-control">
+                    <input type="range" id="font-size-slider" min="14" max="24" value="18">
+                    <span id="font-size-val">18px</span>
+                </div>
+            </div>
+            <div class="settings-group">
+                <label>行間</label>
+                <div class="range-control">
+                    <input type="range" id="line-height-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+                    <span id="line-height-val">1.8</span>
+                </div>
+            </div>
+        </div>
+
+        <article id="content-article" class="content-article glass-panel">
+            <div id="loading-indicator" class="loading">構成中...</div>
+            <header class="article-header">
+                <h1 id="article-title"></h1>
+                <div class="article-meta">
+                    <span id="article-date"></span>
+                    <span id="article-category" class="type-badge"></span>
+                </div>
+            </header>
+            <div id="article-body" class="markdown-body">
+                <!-- Markdown content will be rendered here -->
+            </div>
+            <footer class="article-footer">
+                <div class="related-articles">
+                    <h3>関連記事</h3>
+                    <ul id="related-list" class="related-list">
+                        <!-- Related articles will be listed here -->
+                    </ul>
+                </div>
+                <nav class="back-navigation">
+                    <a href="../bookshelf/index.html" class="back-link back-link-shelf">📖 本棚に戻る</a>
+                    <a href="../index.html" class="back-link back-link-haiku">🔑 キーワードに戻る</a>
+                </nav>
+            </footer>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Charlotte:詩抄-POLANOID (十六月書房). All Rights Reserved.</p>
+    </footer>
+
+    <script src="viewer.js"></script>
+</body>
+</html>

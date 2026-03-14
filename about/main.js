@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // BGM Logic
-    const bgm = new Audio('assets/03 Home Sweet Home feat. KMNZ LIZ.mp3');
+    const bgm = new Audio('../assets/03 Home Sweet Home feat. KMNZ LIZ.mp3');
     bgm.volume = 0.3;
     bgm.loop = false;
 

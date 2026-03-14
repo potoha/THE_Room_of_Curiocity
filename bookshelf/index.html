@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本棚 | 十六月書房</title>
+    <meta name="description" content="十六月書房の思索コンテンツ一覧。断片・論考・企画ノート・作品をカテゴリごとに閲覧できます。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../about/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="../index.html" class="nav-brand">十六月書房</a>
+        <nav class="nav-links">
+            <a href="../index.html">俳句宇宙</a>
+            <a href="../about/index.html">私について</a>
+            <a href="../bookshelf/index.html" class="active">本棚</a>
+            <a href="../zine-viewer/index.html">ZINE</a>
+            <a href="../about/index.html#contact">リンク</a>
+        </nav>
+    </header>
+
+    <main class="bookshelf-container">
+        <header class="bookshelf-header">
+            <h1 class="bookshelf-title">本棚</h1>
+            <p class="bookshelf-desc">思索・評・記録・創作の記録庫。カテゴリごとに並べてあります。</p>
+
+            <div class="bookshelf-controls">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">すべて</button>
+                    <button class="filter-btn" data-filter="fragment">断片</button>
+                    <button class="filter-btn" data-filter="essay">論考</button>
+                    <button class="filter-btn" data-filter="project-note">企画ノート</button>
+                    <button class="filter-btn" data-filter="work">作品</button>
+                </div>
+                <div class="search-group">
+                    <input type="text" id="shelf-search" placeholder="タイトル・キーワードで検索..." autocomplete="off">
+                </div>
+            </div>
+        </header>
+
+        <div id="loading-state" class="loading-state">
+            <div class="loading-spinner"></div>
+            <p>読み込み中...</p>
+        </div>
+
+        <div id="bookshelf-grid" class="bookshelf-grid hidden">
+            <!-- JS によって動的に追加される -->
+        </div>
+
+        <div id="empty-state" class="empty-state hidden">
+            <p>該当するコンテンツがありません。</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Charlotte:詩抄-POLANOID (十六月書房). All Rights Reserved.</p>
+    </footer>
+
+    <script src="bookshelf.js"></script>
+</body>
+</html>

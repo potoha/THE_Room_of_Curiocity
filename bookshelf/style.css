@@ -1,0 +1,200 @@
+/* Bookshelf page styles */
+
+.bookshelf-container {
+    max-width: 1100px;
+    margin: 100px auto 80px;
+    padding: 0 24px;
+    min-height: 80vh;
+}
+
+/* Header */
+.bookshelf-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.bookshelf-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.1em;
+}
+
+.bookshelf-desc {
+    color: #888;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+/* Controls */
+.bookshelf-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-group {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-btn {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background: transparent;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    color: #b9b9b9;
+    transition: all 0.2s ease;
+}
+
+.filter-btn.active {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    color: white;
+    font-weight: 500;
+}
+
+.filter-btn:hover:not(.active) {
+    background: rgba(59, 130, 246, 0.08);
+    border-color: #3b82f6;
+    color: #3b82f6;
+}
+
+.search-group input {
+    padding: 0.4rem 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    background: transparent;
+    width: 240px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-group input:focus {
+    border-color: #3b82f6;
+}
+
+/* Grid */
+.bookshelf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Card */
+.shelf-card {
+    background: rgba(92, 98, 148, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    border-radius: 12px;
+    padding: 1.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s;
+}
+
+.shelf-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.card-type {
+    display: inline-block;
+    font-size: 0.72rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: #354866;
+    color: white;
+    margin-bottom: 0.75rem;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    letter-spacing: 0.05em;
+}
+
+.card-type.type-fragment  { background: #8b5cf6; }
+.card-type.type-essay     { background: #10b981; }
+.card-type.type-project-note { background: #f59e0b; }
+.card-type.type-work      { background: #ef4444; }
+
+.card-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.05rem;
+    line-height: 1.55;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+.card-description {
+    font-size: 0.82rem;
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.card-kw-tag {
+    font-size: 0.7rem;
+    padding: 1px 6px;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.05);
+    color: #9c9c9c;
+}
+
+/* Loading & Empty */
+.loading-state {
+    text-align: center;
+    padding: 4rem;
+    color: #aaa;
+}
+
+.loading-spinner {
+    width: 36px;
+    height: 36px;
+    border: 3px solid rgba(0,0,0,0.1);
+    border-top-color: #3b82f6;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.empty-state {
+    text-align: center;
+    padding: 4rem;
+    color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .bookshelf-title { font-size: 2rem; }
+    .bookshelf-grid { grid-template-columns: 1fr; }
+    .search-group input { width: 100%; }
+}
+
+/* Utility */
+.hidden { display: none !important; }

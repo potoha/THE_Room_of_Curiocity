@@ -2376,5 +2376,153 @@
     "kigo": "yes",
     "type": "植物",
     "season": "spring"
+  },
+  "k0230": {
+    "label": "神話",
+    "reading": "神話",
+    "aliases": [],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0231": {
+    "label": "SF",
+    "reading": "えすえふ",
+    "aliases": [
+      "サイエンス・フィクション"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0232": {
+    "label": "ゴシック",
+    "reading": "ごしっく",
+    "aliases": [],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0233": {
+    "label": "ポスト・アポカリプス",
+    "reading": "ぽすとあぽかりぷす",
+    "aliases": [],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0234": {
+    "label": "少女性",
+    "reading": "しょうじょせい",
+    "aliases": [],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0235": {
+    "label": "メルヘン",
+    "reading": "めるへん",
+    "aliases": [],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0236": {
+    "label": "児童文学",
+    "reading": "じどうぶんがく",
+    "aliases": [],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0237": {
+    "label": "スワンプマン",
+    "reading": "すわんぷまん",
+    "aliases": [],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0238": {
+    "label": "子供時代の終わり",
+    "reading": "こどもじだいのおわり",
+    "aliases": [],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0239": {
+    "label": "美",
+    "reading": "び",
+    "aliases": [],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0240": {
+    "label": "サブカルチャー",
+    "reading": "さぶかるちゃー",
+    "aliases": [],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0241": {
+    "label": "ポストモダン",
+    "reading": "ぽすともだん",
+    "aliases": [
+      "ポスト・モダニズム"
+    ],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0242": {
+    "label": "アニメ",
+    "reading": "あにめ",
+    "aliases": [],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0243": {
+    "label": "オタク",
+    "reading": "おたく",
+    "aliases": [],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0244": {
+    "label": "データベース消費",
+    "reading": "でーたべーすしょうひ",
+    "aliases": [],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0245": {
+    "label": "セカイ系",
+    "reading": "せかいけい",
+    "aliases": [],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0246": {
+    "label": "ナラティブ",
+    "reading": "ならてぃぶ",
+    "aliases": [],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
+  },
+  "k0247": {
+    "label": "コレスポンデンス",
+    "reading": "これすぽんでんす",
+    "aliases": [],
+    "kigo": "no",
+    "type": "物",
+    "season": ""
   }
 }

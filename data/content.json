@@ -1,0 +1,158 @@
+[
+  {
+    "id": "c001",
+    "slug": "raindrops",
+    "type": "fragment",
+    "title": "雨だれ",
+    "keywords": [
+      "k0012"
+    ],
+    "file": "01-fragment/雨だれ.md",
+    "url": "",
+    "description": "思索断片のサンプル"
+  },
+  {
+    "id": "c003",
+    "type": "fragment",
+    "title": "楽園の子供たち",
+    "slug": "paradise-children",
+    "file": "01-fragment/楽園の子供たち.md",
+    "keywords": [
+      "k0231",
+      "k0233"
+    ],
+    "url": "",
+    "description": "近未来、すべてが変わった世界"
+  },
+  {
+    "id": "c004",
+    "type": "project-note",
+    "title": "月のない夜 改稿方針メモ",
+    "slug": "moonless-night-plan",
+    "file": "03-project-note/月のない夜改稿方針.md",
+    "keywords": [
+      "k0024"
+    ],
+    "url": "",
+    "description": "小説『月のない夜』の構造メモ。自意識と神話の停滞について。"
+  },
+  {
+    "id": "c005",
+    "type": "work",
+    "title": "月のない夜",
+    "slug": "月のない夜",
+    "file": "04-works/月のない夜.md",
+    "keywords": [
+      "k0037",
+      "k0024"
+    ],
+    "url": "",
+    "description": "小説『月のない夜』。"
+  },
+  {
+    "id": "c006",
+    "type": "fragment",
+    "title": "『フランケンシュタイン』",
+    "slug": "フランケンシュタイン",
+    "file": "01-fragment/『フランケンシュタイン』.md",
+    "keywords": [
+      "k0230",
+      "k0231",
+      "k0232"
+    ],
+    "url": "",
+    "description": "『フランケンシュタイン』評　博士は善なのか？"
+  },
+  {
+    "id": "c007",
+    "type": "fragment",
+    "title": "『不思議の国のアリス』評、拡大し紡がれ続ける現代の神話",
+    "slug": "不思議の国のアリス-評-拡大し紡がれ続ける現代の神話",
+    "file": "01-fragments/『不思議の国のアリス』.md",
+    "keywords": [
+      "k0230",
+      "k0234",
+      "k0235",
+      "k0236"
+    ],
+    "url": "",
+    "description": "解釈され、変化し続けるアリス像"
+  },
+  {
+    "id": "c008",
+    "type": "fragment",
+    "title": "『変身』における同一性の断絶と回復 ——「スワンプマン」として考えるグレゴール・ザムザ",
+    "slug": "変身",
+    "file": "01-fragment/『変身』.md",
+    "keywords": [
+      "k0168",
+      "k0157",
+      "k0237"
+    ],
+    "url": "",
+    "description": "ザムザはいつから虫になったのか"
+  },
+  {
+    "id": "c009",
+    "type": "fragment",
+    "title": "『失われたものたちの本』評　少年から大人への心理的成長",
+    "slug": "失われたものたちの本",
+    "file": "01fragment/『失われたものたちの本』.md",
+    "keywords": [
+      "k0191",
+      "k0157",
+      "k0238",
+      "k0239"
+    ],
+    "url": "",
+    "description": "「失われたものたちの本」は『君たちはどう生きるか』の副読本ではない"
+  },
+  {
+    "id": "c010",
+    "type": "fragment",
+    "title": "日本サブカルチャーをよむ 銀河鉄道の夜からAKB48まで",
+    "slug": "日本サブカルチャーをよむ-銀河鉄道の夜からakb48まで",
+    "file": "01-fragment/『日本サブカルチャーをよむ〜銀河鉄道の夜からAKB48まで〜』.md",
+    "keywords": [
+      "k0191",
+      "k0239",
+      "k0230",
+      "k0157",
+      "k0240",
+      "k0241",
+      "k0242",
+      "k0243",
+      "k0244",
+      "k0245"
+    ],
+    "url": "",
+    "description": ""
+  },
+  {
+    "id": "c011",
+    "type": "fragment",
+    "title": "ゲイジュツ（する）",
+    "slug": "ゲイジュツ（する）",
+    "file": "01-fragment/ゲイジュツ（する）.md",
+    "keywords": [
+      "k0239",
+      "k0168"
+    ],
+    "url": "",
+    "description": ""
+  },
+  {
+    "id": "c012",
+    "type": "fragment",
+    "title": "久生十蘭『昆虫図』からみるコレスポンデンス",
+    "slug": "久生十蘭",
+    "file": "01-fragments/久生十蘭とコレスポンデンス.md",
+    "keywords": [
+      "k0168",
+      "k0157",
+      "k0247"
+    ],
+    "url": "",
+    "description": ""
+  }
+]

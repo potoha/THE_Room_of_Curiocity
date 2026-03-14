@@ -32,6 +32,7 @@ const haikuVerticalList = document.getElementById('haiku-vertical-list');
 // State
 let haikus = [];
 let keywords = [];
+let contents = []; // content.json data
 let network = null;
 let nodesDataSet = null;
 let edgesDataSet = null;
@@ -43,18 +44,32 @@ let listTouchStartScrollLeft = 0;
 // Initialization
 async function init() {
     try {
-        // Since we are running locally via a server, fetch from parent dir data folder
-        const [haikuRes, keywordRes] = await Promise.all([
-            fetch('../data/haiku.json'),
-            fetch('../data/keywords.json')
+        const [haikuRes, keywordRes, contentRes] = await Promise.all([
+            fetch('data/haiku.json'),
+            fetch('data/keywords.json'),
+            fetch('data/content.json').catch(() => ({ ok: false }))
         ]);
         
         haikus = await haikuRes.json();
         keywords = await keywordRes.json();
+        if (contentRes.ok) {
+            contents = await contentRes.json();
+        }
         
         setupStartScreen();
         setupHaikuList();
         buildNetwork();
+        
+        // Deep link support: ?keyword=k0012 or ?haiku=h_001
+        const urlParams = new URLSearchParams(window.location.search);
+        const startKeywordId = urlParams.get('keyword');
+        const startHaikuId = urlParams.get('haiku');
+        
+        if (startKeywordId || startHaikuId) {
+            setTimeout(() => {
+                window.enterUniverse(startKeywordId || startHaikuId);
+            }, 800);
+        }
     } catch (error) {
         console.error("Failed to load data:", error);
         loadingOverlay.innerHTML = '<p style="color:red;">データの読み込みに失敗しました。</p>';
@@ -86,10 +101,38 @@ function setupStartScreen() {
     // });
 }
 
+function getCurrentSeason() {
+    const month = new Date().getMonth() + 1; // 1-12
+    if (month >= 3 && month <= 5) return 'spring';
+    if (month >= 6 && month <= 8) return 'summer';
+    if (month >= 9 && month <= 11) return 'autumn';
+    return 'winter'; // 12, 1, 2
+}
+
 function pickRandomStartHaiku() {
     if (haikus.length === 0) return;
-    const randIndex = Math.floor(Math.random() * haikus.length);
-    currentStartHaiku = haikus[randIndex];
+    
+    const currentSeason = getCurrentSeason();
+    const currentYear = new Date().getFullYear();
+    
+    // Priority 1: Same season AND same year
+    let candidates = haikus.filter(h => h.season === currentSeason && h.year === currentYear);
+    // Priority 2: Same season AND year-1
+    if (candidates.length === 0) {
+        candidates = haikus.filter(h => h.season === currentSeason && h.year === currentYear - 1);
+    }
+    // Priority 3: Same season (any year)
+    if (candidates.length === 0) {
+        candidates = haikus.filter(h => h.season === currentSeason);
+    }
+    // Fallback: All haikus
+    if (candidates.length === 0) {
+        candidates = haikus;
+    }
+    
+    console.log(`Season: ${currentSeason}, Candidates: ${candidates.length}`);
+    const randIndex = Math.floor(Math.random() * candidates.length);
+    currentStartHaiku = candidates[randIndex];
     
     let htmlText = currentStartHaiku.text;
     currentStartHaiku.keywords.forEach(kwId => {
@@ -130,12 +173,21 @@ function buildNetwork() {
     nodesDataSet = new vis.DataSet();
     edgesDataSet = new vis.DataSet();
     
-    // Calculate degree for each keyword
-    const kwDegrees = {};
-    Object.keys(keywords).forEach(kw => kwDegrees[kw] = 0);
+    // Calculate degree for each keyword (haiku count + content count)
+    const kwHaikuDegrees = {};
+    const kwContentDegrees = {};
+    Object.keys(keywords).forEach(kw => {
+        kwHaikuDegrees[kw] = 0;
+        kwContentDegrees[kw] = 0;
+    });
     haikus.forEach(h => {
         h.keywords.forEach(kw => {
-            if (kwDegrees[kw] !== undefined) kwDegrees[kw]++;
+            if (kwHaikuDegrees[kw] !== undefined) kwHaikuDegrees[kw]++;
+        });
+    });
+    contents.forEach(c => {
+        (c.keywords || []).forEach(kw => {
+            if (kwContentDegrees[kw] !== undefined) kwContentDegrees[kw]++;
         });
     });
 
@@ -147,7 +199,9 @@ function buildNetwork() {
     // Add Keyword Nodes
     Object.keys(keywords).forEach(kwId => {
         const kwData = keywords[kwId];
-        const degree = kwDegrees[kwId] || 0;
+        const haikuDeg = kwHaikuDegrees[kwId] || 0;
+        const contentDeg = kwContentDegrees[kwId] || 0;
+        const degree = haikuDeg + contentDeg;
         
         let r, theta;
         const isSeasonal = (kwData.kigo === 'yes' || !!kwData.season);
@@ -194,11 +248,11 @@ function buildNetwork() {
             id: `kw_${kwId}`,
             label: kwData.label,
             group: 'keyword',
-            value: 15 + (degree * 3), // size
+            value: 15 + (degree * 4), // size weighted by haiku + content count
             x: x,
             y: y,
             physics: false, // keep keywords in their assigned locations
-            font: { size: 18, color: nodeColor.border, face: 'Noto Serif JP' },
+            font: { size: Math.min(24, 16 + degree), color: nodeColor.border, face: 'Noto Serif JP' },
             color: nodeColor
         });
     });
@@ -269,6 +323,14 @@ function buildNetwork() {
     // Events
     network.once('stabilizationIterationsDone', () => {
         loadingOverlay.classList.add('hidden');
+        // Local network view: focus on the start haiku's first keyword
+        if (currentStartHaiku && currentStartHaiku.keywords.length > 0) {
+            const focusKw = currentStartHaiku.keywords[0];
+            network.focus(`kw_${focusKw}`, {
+                scale: 1.8,
+                animation: { duration: 1500, easingFunction: 'easeInOutQuad' }
+            });
+        }
     });
 
     network.on('hoverNode', function (params) {
@@ -405,12 +467,14 @@ function showKeyword(kw) {
     const kwLabel = keywords[kw] ? keywords[kw].label : kw;
     keywordTitleEl.textContent = kwLabel;
     
+    // --- Haiku section ---
     const relatedHaikus = haikus.filter(h => h.keywords.includes(kw));
-    
     keywordHaikuList.innerHTML = '';
+    const haikuSection = document.querySelector('.keyword-haikus');
     if (relatedHaikus.length === 0) {
-        keywordHaikuList.innerHTML = '<li><p class="meta-text">関連する俳句がありません。</p></li>';
+        haikuSection.classList.add('empty-section');
     } else {
+        haikuSection.classList.remove('empty-section');
         relatedHaikus.forEach(h => {
             const li = document.createElement('li');
             li.innerHTML = `
@@ -421,10 +485,53 @@ function showKeyword(kw) {
             keywordHaikuList.appendChild(li);
         });
     }
+    
+    // --- Content sections (Fragment / Essay / Works) ---
+    const relatedContents = contents.filter(c => (c.keywords || []).includes(kw));
+    const fragments = relatedContents.filter(c => c.type === 'fragment');
+    const essays = relatedContents.filter(c => c.type === 'essay');
+    const works = relatedContents.filter(c => c.type === 'work');
+    
+    renderContentSection('keyword-fragment-list', '.keyword-fragments', fragments);
+    renderContentSection('keyword-essay-list', '.keyword-essays', essays);
+    renderContentSection('keyword-work-list', '.keyword-works', works);
 
     keywordView.classList.remove('hidden');
     haikuView.classList.add('hidden');
     detailPanel.classList.remove('hidden');
+}
+
+function renderContentSection(listId, sectionSelector, items) {
+    const listEl = document.getElementById(listId);
+    const sectionEl = document.querySelector(sectionSelector);
+    if (!listEl || !sectionEl) return;
+    
+    listEl.innerHTML = '';
+    if (items.length === 0) {
+        sectionEl.classList.add('empty-section');
+    } else {
+        sectionEl.classList.remove('empty-section');
+        items.forEach(c => {
+            const li = document.createElement('li');
+            const hasUrl = c.url && c.url.trim() !== '';
+            li.innerHTML = `
+                <p class="preview-text">${c.title}</p>
+                <p class="meta-text">${c.description || ''}</p>
+            `;
+            if (hasUrl) {
+                li.addEventListener('click', () => window.open(c.url, '_blank'));
+                li.style.cursor = 'pointer';
+            } else if (c.slug) {
+                li.addEventListener('click', () => {
+                    window.location.href = `contentsviewer/index.html?slug=${c.slug}`;
+                });
+                li.style.cursor = 'pointer';
+            } else {
+                li.style.cursor = 'default';
+            }
+            listEl.appendChild(li);
+        });
+    }
 }
 
 function closePanel() {
