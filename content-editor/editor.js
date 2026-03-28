@@ -106,6 +106,11 @@ function setupEventListeners() {
         if (e.key === 'Enter') { e.preventDefault(); manualKeywordBtn.click(); }
     });
 
+    contentTitle.addEventListener('input', updateSaveButtonState);
+    contentType.addEventListener('change', updateSaveButtonState);
+    contentSlug.addEventListener('input', updateSaveButtonState);
+    contentFile.addEventListener('input', updateSaveButtonState);
+
     contentForm.addEventListener('submit', handleFormSubmit);
     
     downloadContentBtn.addEventListener('click', () => downloadFile(allContents, 'content.json'));
@@ -325,6 +330,7 @@ function addCandidateKeyword(word) {
         const resolvedId = resolveKeywordId(word);
         createCheckboxUI(word, resolvedId, resolvedId !== null);
         keywordSection.style.display = 'block';
+        updateSaveButtonState();
     }
 }
 
@@ -333,7 +339,13 @@ function resolveKeywordId(word) {
 }
 
 function updateSaveButtonState() {
-    if (selectedKeywordIds.size > 0 && contentTitle.value.trim()) {
+    const isTitleValid = !!contentTitle.value.trim();
+    const isTypeValid = !!contentType.value;
+    const isSlugValid = !!contentSlug.value.trim();
+    const isFileValid = !!contentFile.value.trim();
+    const areKeywordsSelected = selectedKeywordIds.size > 0;
+
+    if (isTitleValid && isTypeValid && isSlugValid && isFileValid && areKeywordsSelected) {
         saveBtn.classList.remove('disabled');
         saveBtn.disabled = false;
     } else {
