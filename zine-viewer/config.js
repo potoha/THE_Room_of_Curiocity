@@ -93,4 +93,11 @@ export const ZINE_DATA = [
         pages: ["assets/vol12/12-1.png", "assets/vol12/12-2.png", "assets/vol12/12-3.jpg", "assets/vol12/12-4.png", "assets/vol12/12-5.jpg", "assets/vol12/12-6.png", "assets/vol12/12-7.png", "assets/vol12/12-8.png"],
         pdf: "assets/vol12/vo12.pdf",
     },
+    {
+        id: "vol13", label: "Vol.13",
+        cover: "assets/vol13/13-1.jpg",
+        spread: "assets/vol13/conect.png",
+        pages: ["assets/vol13/13-1.jpg", "assets/vol13/13-2.jpg", "assets/vol13/13-3.jpg", "assets/vol13/13-4.jpg", "assets/vol13/13-5.jpg", "assets/vol13/13-6.jpg", "assets/vol13/13-7.jpg", "assets/vol13/13-8.jpg"],
+        pdf: "assets/vol13/13.pdf",
+    },
 ];
