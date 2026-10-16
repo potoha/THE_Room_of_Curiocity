@@ -27,18 +27,6 @@
     "description": "近未来、すべてが変わった世界"
   },
   {
-    "id": "c004",
-    "type": "project-note",
-    "title": "月のない夜 改稿方針メモ",
-    "slug": "moonless-night-plan",
-    "file": "03-project-note/月のない夜改稿方針.md",
-    "keywords": [
-      "k0024"
-    ],
-    "url": "",
-    "description": "小説『月のない夜』の構造メモ。自意識と神話の停滞について。"
-  },
-  {
     "id": "c006",
     "type": "fragment",
     "title": "『フランケンシュタイン』",
@@ -251,22 +239,6 @@
     ],
     "url": "",
     "description": "2024年制作\n初の長編小説"
-  },
-  {
-    "id": "c020",
-    "type": "work",
-    "title": "月のない夜",
-    "slug": "月のない夜",
-    "file": "04-works/月のない夜.md",
-    "keywords": [
-      "k0157",
-      "k0236",
-      "k0168",
-      "k0249",
-      "k0239"
-    ],
-    "url": "",
-    "description": "2025年制作\n「ある夜のこと」のリファイン作品"
   },
   {
     "id": "c021",
