@@ -6,7 +6,7 @@
     const response = await fetch('data/content.json');
     if (!response.ok) throw new Error('Could not fetch works');
     const works = await response.json();
-    const priority = ['月のない夜', '先輩と宇宙飛行士'];
+    const priority = ['先輩と宇宙飛行士'];
     const featured = [...works].filter(w => w.featured === true)
       .sort((a,b) => (a.featuredOrder||999)-(b.featuredOrder||999));
     const ordered = [
