@@ -1,0 +1,32 @@
+name: Validate creative portfolio
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile Python tools
+        run: python3 -m py_compile tools/build_content_index.py
+      - name: Generate publish index
+        run: python3 tools/build_content_index.py --output build/data/content.json
+      - name: Check content references
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('data/MD_contents_master')
+          items=json.loads(Path('build/data/content.json').read_text(encoding='utf8'))
+          assert items, 'No public content in generated index'
+          missing=[str(e['file']) for e in items if not (root / e['file']).is_file()]
+          assert not missing, f'Missing Markdown files: {missing}'
+          slugs=[e['slug'] for e in items]
+          assert len(slugs)==len(set(slugs)), 'Duplicate public slugs'
+          print(f'Validated {len(items)} published content references')
+          PY
