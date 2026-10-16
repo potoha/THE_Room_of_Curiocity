@@ -32,3 +32,21 @@
     const a=document.createElement('a'); a.href='bookshelf/index.html';a.className='text-link';a.textContent='作品一覧を見る ↗';container.append(a);
   }
 })();
+
+
+// 句の引用は既存アーカイブを参照する。演出用なので取得失敗時もトップの導線は維持。
+(async function displayHeroHaiku() {
+  const slot = document.getElementById('hero-haiku');
+  if (!slot) return;
+  try {
+    const response = await fetch('data/haiku.json');
+    if (!response.ok) return;
+    const haiku = await response.json();
+    const season = ['winter','winter','spring','spring','spring','summer','summer','summer','autumn','autumn','autumn','winter'][new Date().getMonth()];
+    const candidates = haiku.filter(h => h.season === season && h.text);
+    const options = candidates.length ? candidates : haiku.filter(h=>h.text);
+    // 日ごとに一定、更新時のちらつきを避ける
+    const index = Math.floor(Date.now() / 86400000) % options.length;
+    if (options.length) slot.textContent = options[index].text;
+  } catch (_) { /* decorative enhancement, no impact on navigation */ }
+})();
