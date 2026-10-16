@@ -57,7 +57,7 @@
     "type": "fragment",
     "title": "『不思議の国のアリス』評、拡大し紡がれ続ける現代の神話",
     "slug": "不思議の国のアリス-評-拡大し紡がれ続ける現代の神話",
-    "file": "01-fragments/『不思議の国のアリス』.md",
+    "file": "01-fragment/『不思議の国のアリス』.md",
     "keywords": [
       "k0230",
       "k0234",
@@ -86,7 +86,7 @@
     "type": "fragment",
     "title": "『失われたものたちの本』評　少年から大人への心理的成長",
     "slug": "失われたものたちの本",
-    "file": "01fragment/『失われたものたちの本』.md",
+    "file": "01-fragment/『失われたものたちの本』.md",
     "keywords": [
       "k0191",
       "k0157",
@@ -135,7 +135,7 @@
     "type": "fragment",
     "title": "久生十蘭『昆虫図』からみるコレスポンデンス",
     "slug": "久生十蘭",
-    "file": "01-fragments/久生十蘭とコレスポンデンス.md",
+    "file": "01-fragment/久生十蘭とコレスポンデンス.md",
     "keywords": [
       "k0168",
       "k0157",
@@ -149,7 +149,7 @@
     "type": "essay",
     "title": "『マクベス』について",
     "slug": "マクベス-について",
-    "file": "『マクベス』について.md",
+    "file": "02-essay/『マクベス』について.md",
     "keywords": [
       "k0248",
       "k0249",
@@ -178,7 +178,7 @@
     "type": "essay",
     "title": "僕はサンフェーテッドをこう聴いた",
     "slug": "僕はサンフェーテッドをこう聴いた",
-    "file": "僕はサンフェーテッドをこう聴いた.md",
+    "file": "02-essay/僕はサンフェーテッドをこう聴いた.md",
     "keywords": [
       "k0191",
       "k0157",
@@ -227,7 +227,7 @@
     "type": "work",
     "title": "ある夜のこと",
     "slug": "ある夜のこと",
-    "file": "ある夜のこと.md",
+    "file": "04-works/ある夜のこと.md",
     "keywords": [
       "k0108",
       "k0242"
@@ -240,7 +240,7 @@
     "type": "work",
     "title": "先輩と宇宙飛行士",
     "slug": "先輩と宇宙飛行士",
-    "file": "先輩と宇宙飛行士.md",
+    "file": "04-works/先輩と宇宙飛行士.md",
     "keywords": [
       "k0249",
       "k0024",
@@ -257,7 +257,7 @@
     "type": "work",
     "title": "月のない夜",
     "slug": "月のない夜",
-    "file": "先輩と宇宙飛行士.md",
+    "file": "04-works/月のない夜.md",
     "keywords": [
       "k0157",
       "k0236",
@@ -273,7 +273,7 @@
     "type": "work",
     "title": "空をトぶ魔法",
     "slug": "空をトぶ魔法legacy",
-    "file": "空をトぶ魔法legacy.md",
+    "file": "04-works/空をトぶ魔法legacy.md",
     "keywords": [
       "k0157",
       "k0108",
