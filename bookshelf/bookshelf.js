@@ -12,7 +12,7 @@ const TYPE_LABELS = {
 
 let allContents  = [];
 let allKeywords  = {};
-let currentFilter = 'all';
+let currentFilter = new URLSearchParams(window.location.search).get('category') || 'all';
 let searchQuery   = '';
 
 async function init() {
@@ -44,14 +44,21 @@ async function init() {
 }
 
 function setupControls() {
+    // Category deep links from the LP
+    if (!['all','fragment','essay','project-note','work'].includes(currentFilter)) currentFilter='all';
     // Filter buttons
     const filterBtns = document.querySelectorAll('.filter-btn');
     if (filterBtns.length > 0) {
         filterBtns.forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.filter === currentFilter);
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 currentFilter = btn.dataset.filter;
+                const url = new URL(window.location.href);
+                if (currentFilter === 'all') url.searchParams.delete('category');
+                else url.searchParams.set('category',currentFilter);
+                window.history.replaceState(null,'',url);
                 renderGrid();
             });
         });

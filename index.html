@@ -1,138 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>俳句宇宙 | Haiku Universe</title>
-    <!-- Fonts: Noto Serif JP for Haiku and Zen Kaku Gothic New -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <!-- vis-network -->
-    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="十六月書房は、俳句・小説・随筆・ZINEなどを蒐集し、展示する個人的な書斎です。">
+  <meta name="theme-color" content="#17253b">
+  <title>十六月書房 | しがつのへや</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+  <script>if (new URLSearchParams(location.search).has('haiku') || new URLSearchParams(location.search).has('keyword')) location.replace('haiku/index.html'+location.search+location.hash);</script>
+  <script src="home.js" defer></script>
 </head>
 <body>
-    <!-- ヘッダー (ナビゲーション) -->
-    <header class="navbar">
-        <a href="index.html" class="nav-brand">十六月書房</a>
-        <nav class="nav-links">
-            <a href="about/index.html">私について</a>
-            <a href="bookshelf/index.html">本棚</a>
-            <a href="zine-viewer/index.html">ZINE</a>
-            <a href="about/index.html#contact">リンク</a>
-        </nav>
-    </header>
-
-    <!-- Fullscreen Network Canvas -->
-    <div id="network-canvas"></div>
-
-    <!-- UI Overlay -->
-    <div id="ui-layer">
-        
-        <!-- Header / Breadcrumbs Log -->
-        <header id="history-log">
-            <div class="log-title">探索の軌跡</div>
-            <ul id="breadcrumb-list">
-                <!-- Javascript will populate this -->
-            </ul>
-        </header>
-
-        <!-- Right detail panel -->
-        <aside id="detail-panel" class="hidden">
-            <button id="close-panel" aria-label="閉じる">×</button>
-            
-            <div id="haiku-view" class="view-section hidden">
-                <div class="haiku-container haiku-header">
-                    <p id="haiku-note" class="haiku-note"></p>
-                    <p id="haiku-text" class="vertical-text"></p>
-                    <p id="haiku-year" class="haiku-year"></p>
-                </div>
-                
-                <div class="time-chain">
-                    <h3>この頃の俳句</h3>
-                    <ul id="time-chain-list" class="item-list"></ul>
-                </div>
-            </div>
-
-            <div id="keyword-view" class="view-section hidden">
-                <h2 id="keyword-title"></h2>
-                <div class="keyword-haikus">
-                    <h3>Haiku</h3>
-                    <ul id="keyword-haiku-list" class="item-list"></ul>
-                </div>
-                <div class="keyword-fragments">
-                    <h3>Fragment</h3>
-                    <ul id="keyword-fragment-list" class="item-list"></ul>
-                </div>
-                <div class="keyword-essays">
-                    <h3>Essay / Study</h3>
-                    <ul id="keyword-essay-list" class="item-list"></ul>
-                </div>
-                <div class="keyword-works">
-                    <h3>Works</h3>
-                    <ul id="keyword-work-list" class="item-list"></ul>
-                </div>
-            </div>
-        </aside>
-
-        <!-- Start Screen overlay -->
-        <div id="start-screen" class="overlay">
-            <div class="start-content">
-                <div class="start-haiku-wrapper">
-                    <p id="start-haiku-text" class="vertical-text start-interactive"></p>
-                    <p id="start-haiku-year" class="vertical-text small-text"></p>
-                </div>
-                <!-- Action buttons -->
-                <div class="start-actions">
-                    <button class="btn-text-ghost" id="start-random-btn">⟳ 別の句からはじめる</button>
-                    <button class="btn-outline" id="start-enter-btn">explore haiku-verse</button>
-                </div>
-            </div>
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header class="site-header">
+    <a class="site-logo" href="index.html" aria-label="十六月書房 トップページ">
+      <span class="logo-jp">十六月書房</span><span class="logo-en">THE ROOM OF CURIOCITY</span>
+    </a>
+    <nav class="site-nav" aria-label="主要ナビゲーション">
+      <a href="#rooms">作品</a>
+      <a href="haiku/index.html">俳句宇宙</a>
+      <a href="bookshelf/index.html">文芸</a>
+      <a href="zine-viewer/index.html">出版</a>
+      <a href="about/index.html">この部屋について</a>
+    </nav>
+    <a class="dev-link" href="https://github.com/potoha" rel="noopener noreferrer" target="_blank" aria-label="開発活動（現在はGitHubにリンク）">開発活動 <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <p class="eyebrow">SIXTEENTH APRIL / PRIVATE ARCHIVE</p>
+        <h1 id="hero-title">終わらなかったものを、<br>ここに。</h1>
+        <p class="hero-lead">十六月書房は、俳句、小説、随筆、ZINE、制作の記録を蒐集し、展示するための個人的な書斎です。</p>
+        <p class="hero-note">十六月とは、前の年度の四月から数えて十六番目の月。季節から取り残されたものたちにも、置き場所があっていい。</p>
+        <div class="hero-actions">
+          <a class="button button-solid" href="#rooms">展示室へ <span aria-hidden="true">↘</span></a>
+          <a class="button button-quiet" href="#shelf">書架から読む <span aria-hidden="true">↓</span></a>
         </div>
-
-        <!-- Loading overlay -->
-        <div id="loading" class="overlay">
-            <div class="spinner"></div>
-            <p>星々を繋いでいます...</p>
-        </div>
-
-        <!-- Haiku List Overlay -->
-        <div id="haiku-list-overlay" class="overlay hidden">
-            <div class="list-container">
-                <div class="list-header">
-                    <h2>すべての俳句</h2>
-                    <div class="list-controls">
-                        <label for="sort-select">並べ替え:</label>
-                        <select id="sort-select" class="dropdown">
-                            <option value="newest">新しい順</option>
-                            <option value="season">季節ごと</option>
-                            <option value="random">ランダム</option>
-                        </select>
-                        <button id="close-list-btn" class="close-list-btn" aria-label="Close List">← 戻る</button>
-                    </div>
-                </div>
-                <!-- Vertical, right-to-left layout for the list -->
-                <div class="haiku-vertical-list" id="haiku-vertical-list">
-                    <!-- Javascript will populate vertical haikus here -->
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Floating Action Button -->
-    <button id="show-list-btn" class="fab-list-btn" title="すべての俳句を見る">
-        <span class="fab-icon">☰</span>
-        <span class="fab-label">一覧</span>
-    </button>
-
-    <!-- フッター -->
-    <footer>
-        <p>&copy; 2026 Charlotte:詩抄-POLANOID (十六月書房). All Rights Reserved.</p>
-    </footer>
-
-    <!-- Main Application Logic -->
-    <script src="script.js"></script>
+      </div>
+      <div class="hero-graphic" aria-hidden="true">
+        <div class="orbit orbit-outer"></div><div class="orbit orbit-inner"></div>
+        <div class="hero-moon"></div><div class="moon-halo"></div><div class="orbit-dot"></div>
+        <span class="graphic-number">04 / 16</span>
+        <span class="graphic-caption">a room for<br>unfinished things.</span><div class="haiku-ghost"><span>HAIKU / FROM THE ARCHIVE</span><p id="hero-haiku">ことばを蒐集しています</p></div>
+      </div>
+      <span class="hero-side-label" aria-hidden="true">十六月書房　しがつのへや</span><a class="scroll-cue" href="#rooms"><span>SCROLL TO EXPLORE</span><span aria-hidden="true">↓</span></a>
+    </section>
+    <div class="paper-ribbon" aria-hidden="true"><span>COLLECT • ARRANGE • REMEMBER</span><span>ことばの置き場所</span></div>
+    <section class="section rooms" id="rooms" aria-labelledby="rooms-title">
+      <div class="section-heading">
+        <div><span class="section-index">01 / THE ROOMS</span><h2 id="rooms-title">部屋をめぐる</h2></div>
+        <p>作品を探す人にも、偶然の出会いを楽しむ人にも。</p>
+      </div>
+      <div class="room-grid">
+        <a class="room-card room-haiku" href="haiku/index.html">
+          <div class="room-art"><span class="abstract-star" aria-hidden="true">✳</span><span class="room-art-label">俳句宇宙</span></div>
+          <div class="room-caption"><span class="room-number">ROOM 01 / HAIKU</span><h3>俳句をたどる</h3><p>季語と言葉のつながりから、句を探索する。ネットワークの星図と一覧で。</p><span class="room-action">俳句宇宙を開く <span aria-hidden="true">↗</span></span></div>
+        </a>
+        <a class="room-card room-writing" href="bookshelf/index.html">
+          <div class="room-art"><span class="paper-sheet" aria-hidden="true">文章<br>の<br>余白</span><span class="room-art-label">文芸と随想</span></div>
+          <div class="room-caption"><span class="room-number">ROOM 02 / WRITINGS</span><h3>文芸と断片を読む</h3><p>小説、評論、随筆、創作ノート。完成したものも、考えかけのものも。</p><span class="room-action">書架を開く <span aria-hidden="true">↗</span></span></div>
+        </a>
+        <a class="room-card room-zine" href="zine-viewer/index.html">
+          <div class="room-art"><img src="zine-viewer/assets/vol10/10-1.jpg" alt="ZINE『おりおり』の表紙" loading="lazy"><span class="room-art-label">おりおり / ZINE</span></div>
+          <div class="room-caption"><span class="room-number">ROOM 03 / PUBLISHING</span><h3>紙をひらく</h3><p>小さな出版物『おりおり』のアーカイブ。3Dビューアでめくる、折る。</p><span class="room-action">出版物を見る <span aria-hidden="true">↗</span></span></div>
+        </a>
+      </div>
+    </section>
+    <section class="section shelf" id="shelf" aria-labelledby="shelf-title">
+      <div class="section-heading">
+        <div><span class="section-index">02 / FROM THE SHELF</span><h2 id="shelf-title">書架より</h2></div>
+        <a class="text-link" href="bookshelf/index.html">すべての文章を見る <span aria-hidden="true">↗</span></a>
+      </div>
+      <div id="featured-works" class="featured-grid" aria-live="polite"><p class="loading-works">書架を開いています…</p></div>
+    </section>
+    <section class="section side-rooms" aria-labelledby="side-title">
+      <div><span class="section-index">03 / NOTES & MARGINS</span><h2 id="side-title">余白にあるもの</h2><p>作品に至るまでの思索や、形になる前の記録も残しています。</p></div>
+      <div class="side-links">
+        <a href="bookshelf/index.html?category=project-note"><span><small>NOTES</small>制作ノート・企画書</span><span aria-hidden="true">↗</span></a>
+        <a href="about/index.html"><span><small>ABOUT</small>この部屋と、書き手について</span><span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+    <section class="about-band" aria-labelledby="about-title">
+      <div><span class="section-index">ABOUT THIS ROOM</span><h2 id="about-title">十六月の部屋で、<br>ことばを集めている。</h2></div>
+      <div><p>書き、読み、蒐集し、つくる。このサイトは活動を記録する書斎であり、表現作品のポートフォリオです。</p><a class="button button-outline" href="about/index.html">この部屋について <span aria-hidden="true">↗</span></a></div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div><strong>十六月書房</strong><span>THE ROOM OF CURIOCITY</span><small>© 2026 十六月書房</small></div>
+    <div class="footer-links"><a href="https://note.com/shihow_of_po" rel="noopener noreferrer" target="_blank">note ↗</a><a href="https://x.com/Shishow_of_PO" rel="noopener noreferrer" target="_blank">X ↗</a><a href="https://github.com/potoha" rel="noopener noreferrer" target="_blank">開発活動 / GitHub ↗</a></div>
+    <p class="footer-disclaimer">開発・事業の情報は別サイト beyond the Word で扱う予定です。</p>
+  </footer>
 </body>
 </html>
