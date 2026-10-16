@@ -1,0 +1,43 @@
+name: Publish creative portfolio
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout site
+        uses: actions/checkout@v4
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Assemble static site
+        run: |
+          mkdir -p build
+          rsync -a ./ build/ \
+            --exclude=build/ --exclude=.git/ --exclude=.github/ --exclude=tools/ \
+            --exclude=.gitignore --exclude='*.bat'
+          touch build/.nojekyll
+      - name: Generate Markdown index
+        run: python3 tools/build_content_index.py --output build/data/content.json
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+      - name: Deploy to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
